@@ -272,7 +272,6 @@ public class DBConnection {
                 if ((rs.getInt("lahetetty")) == 1) {
                     p.setSent();
                 }
-                //System.out.println(p.getId() + " " + p.getFromSP() + " " + p.getToSP() + " " + p.isSent());
                 pps.add(p);
             }
         } catch (SQLException ex) {
