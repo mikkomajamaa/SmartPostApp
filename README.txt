@@ -1,1 +1,5 @@
 This application is designed for imaginary SmartPost customer to send packages between SmartPosts and draw routes on the map for the packages. The user can also delete packages, look at the info on the packages and the package's senders and receivers. To send a package the user has to make one. On the add package -window the user can also create and delete "things" that can be added to the package.
+
+The application uses SQLite3 database to store data. When the program starts, the user has two choices: either continue the last session or start a completely new session. In the first scenario all the data from the previously created database is loaded to objects. If the user chooses to start a new session, the database will be recreated and all the SmartPost data is loaded and parsed to the database.
+
+When the user makes things or packages, objects of those are created so the program wouldn't crash even if the connection to the database is lost. The data is also inserted to the database. The log on packages' and persons' info are relied upon the database, though.
