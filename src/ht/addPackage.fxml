@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="709.0" prefWidth="838.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ht.AddPackageController">
+    <children>
+        <GridPane prefHeight="810.0" prefWidth="920.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="152.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="461.0" minHeight="10.0" prefHeight="376.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="648.0" minHeight="10.0" prefHeight="421.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="5.0" prefWidth="19.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="158.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="0.0" prefWidth="27.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="128.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="134.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="78.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="139.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <ComboBox fx:id="chooseObjectComboBox" onMouseClicked="#chooseObjectComboBoxClicked" prefWidth="150.0" promptText="Valitse esine" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button fx:id="addObjectToPackage" mnemonicParsing="false" onAction="#addObjectToPackageAction" text="Lisää pakettiin" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label text="Luo uusi esine:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="objectNameField" promptText="Nimi" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="objectSizeField" promptText="Koko (cm^3)" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <TextField fx:id="objectWeightField" promptText="Paino (kg)" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Button fx:id="makeObjectButton" mnemonicParsing="false" onAction="#makeObjectButtonAction" text="Luo esine" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <RadioButton fx:id="breakableRadioButton" mnemonicParsing="false" onAction="#breakableRadioButtonAction" text="Hajoava esine" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Button fx:id="deleteThingPButton" mnemonicParsing="false" onAction="#deleteThingPButtonAction" prefHeight="26.0" prefWidth="81.0" text="paketista" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Label text="poista esine:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Button fx:id="deleteThingDBButton" mnemonicParsing="false" onAction="#deleteThingDBButtonAction" text="tietokannasta" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                    </children>
+                </GridPane>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="16.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="311.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Luo paketti" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </GridPane>
+                <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="47.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="166.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="207.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="299.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="299.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Valitse pakettiluokka:" GridPane.columnIndex="1" />
+                  <RadioButton fx:id="firstClassRadioButton" mnemonicParsing="false" onAction="#firstClassRadioButtonAction" text="1. lk" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="thirdClassRadioButton" layoutX="71.0" layoutY="96.0" mnemonicParsing="false" onAction="#thirdClassRadioButton" text="3. lk" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <RadioButton fx:id="secondClassRadioButton" layoutX="71.0" layoutY="96.0" mnemonicParsing="false" onAction="#secondClassRadioButtonAction" prefHeight="0.0" prefWidth="61.0" text="2. lk" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="firstClassLabel" prefHeight="82.0" prefWidth="220.0" text="Max. paino: 5.00 kgMax. koko: 30x30x30 cmMax. etäisyys: 150 km" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label fx:id="secondClassLabel" prefHeight="64.0" prefWidth="220.0" text="Max. paino: 5.00 kgMax. koko: 20x20x20 cm" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label fx:id="thirdClassLabel" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                    </children>
+                </GridPane>
+                <GridPane prefHeight="461.0" prefWidth="460.0" GridPane.rowIndex="2">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="42.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="284.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="21.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="180.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="58.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="155.0" minHeight="3.0" prefHeight="135.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="185.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="216.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="221.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="221.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="234.0" minHeight="0.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <ComboBox fx:id="fromCityComboBox" prefHeight="31.0" prefWidth="219.0" promptText="Lähtökaupunki" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="fromAutomatComboBox" onMouseClicked="#fromAutomatComboBoxClicked" prefHeight="31.0" prefWidth="218.0" promptText="Automaatti" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="toCityComboBox" prefHeight="31.0" prefWidth="177.0" promptText="Kohdekaupunki" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="toAutomatComboBox" onMouseClicked="#toAutomatComboBoxClicked" prefHeight="31.0" prefWidth="182.0" promptText="Automaatti" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label text="Paketin lähetystiedot" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Lähettäjä:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Vastaanottaja:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="fromFirstName" promptText="Etunimi" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="toPhoneNumber" layoutX="10.0" layoutY="323.0" promptText="Puhelinnumero" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                        <TextField fx:id="toLastName" layoutX="10.0" layoutY="323.0" promptText="Sukunimi" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <TextField fx:id="toFirstName" layoutX="10.0" layoutY="323.0" promptText="Etunimi" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <TextField fx:id="fromPhoneNumber" layoutX="10.0" layoutY="323.0" promptText="Puhelinnumero" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="fromLastName" layoutX="10.0" layoutY="323.0" promptText="Sukunimi" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="notificationLabel" alignment="TOP_LEFT" contentDisplay="TOP" GridPane.columnIndex="1" />
+                    </children>
+                </GridPane>
+                <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="356.0" minHeight="10.0" prefHeight="356.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="0.0" prefWidth="0.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="307.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="133.0" minHeight="2.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="305.0" minHeight="10.0" prefHeight="228.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="69.0" minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                     <children>
+                        <ListView fx:id="listView" prefHeight="233.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="infoLabel" alignment="TOP_LEFT" GridPane.columnIndex="1" />
+                     </children>
+                        </GridPane>
+                        <GridPane GridPane.rowIndex="1">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="5.0" prefWidth="5.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="302.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonAction" text="Peruuta" GridPane.columnIndex="1" />
+                                <Button fx:id="makePackageButton" mnemonicParsing="false" onAction="#makePackageButtonAction" text="Luo paketti" GridPane.columnIndex="2" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </GridPane>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,730 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE SmartPost (
+SPid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+
+nimi VARCHAR(32),
+aukioloajat VARCHAR(40) NOT NULL,
+
+longitude VARCHAR(20) NOT NULL,
+latitude VARCHAR(20) NOT NULL,
+
+
+osoite VARCHAR(30),
+postinro VARCHAR(30), 
+kaupunki VARCHAR(30)
+);
+INSERT INTO SmartPost VALUES(1,'Smartpost, Lidl Graniittitalo','ma-la 7.00 - 22.00, su 10.00 - 22.00','24.9319675','60.1695913','Salomonkatu 13','00104','HELSINKI');
+INSERT INTO SmartPost VALUES(2,'Smartpost, Tokmanni Yliopiston metroasema  ','ma-la 8.00 - 21.00, su 10.00 - 18.00','24.9464123','60.1721326','Vilhonkatu 5 ','00104','HELSINKI');
+INSERT INTO SmartPost VALUES(3,'Smartpost, Tokmanni Citycenter  ','ma-pe 10.00 - 20.00, la 10.00 - 19.00, su 12.00 - 18.00','24.9414827','60.1703702','Kaivokatu 7 ','00104','HELSINKI');
+INSERT INTO SmartPost VALUES(4,'Pakettiautomaatti, Helsingin Pääposti keskusta','Talvi 12.8.-26.5. ma-to 8-22 pe 8-20 la-su 12-18 / Kesä 27.5.-11.8. ma-to 9-20 pe 9-18 la-su 12-18','24.9397235','60.1713943','Elielinaukio 2 G','00105','HELSINKI');
+INSERT INTO SmartPost VALUES(5,'Pakettiautomaatti, Stockmann Helsinki','ma-pe 9.00 - 21.00, la 9.00 - 19.00, su 11.00 - 18.00','24.9423342','60.1684243','Aleksanterinkatu 52','00105','HELSINKI');
+INSERT INTO SmartPost VALUES(6,'Pakettiautomaatti, K-supermarket Kaisaniemi','ma-pe 6.30 - 21.00, la 8.00 - 21.00, su 12.00 - 19.00','24.9474013','60.1712539','Kaisaniemenkatu 5','00105','HELSINKI');
+INSERT INTO SmartPost VALUES(7,'Pakettiautomaatti, Helsinki, Kluuvi','ma-pe 10.00 - 20.00, la 10.00 - 18.00, su 12.00 - 18.00','24.9475122','60.1689538','Aleksanterinkatu 9','00105','HELSINKI');
+INSERT INTO SmartPost VALUES(8,'Pakettiautomaatti, Posti Annankatu','ma - pe 9.00 - 18.00 , la 10.00 - 15.00','24.9409578','60.1638205','Annankatu 8','00125','HELSINKI');
+INSERT INTO SmartPost VALUES(9,'Pakettiautomaatti, S-market Bulevardi','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9299994','60.1613086','Hietalahdenranta 7','00125','HELSINKI');
+INSERT INTO SmartPost VALUES(10,'Pakettiautomaatti, S-market Kasarmitori','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9480459','60.1651821','Kasarmikatu 19','00135','HELSINKI');
+INSERT INTO SmartPost VALUES(11,'Smartpost, Kaapelitehdas','ma-pe 08.30 - 19.00, la 12.00 - 16.00','24.9044027','60.1618058','Tallberginkatu 1 ','00184','HELSINKI');
+INSERT INTO SmartPost VALUES(12,'Smartpost, Tokmanni Ruoholahti','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','24.9101479','60.163556','Itämerenkatu 21 ','00184','HELSINKI');
+INSERT INTO SmartPost VALUES(13,'Pakettiautomaatti, K-market Jätkäsaari','ma-la 7.00 - 21.00, su 12.00 - 21.00','24.9188485','60.16022','Välimerenkatu 5','00185','HELSINKI');
+INSERT INTO SmartPost VALUES(14,'Pakettiautomaatti, S-market Ruoholahti','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9140495','60.1637339','Itämerentori 2','00185','HELSINKI');
+INSERT INTO SmartPost VALUES(15,'Pakettiautomaatti, K-citymarket Ruoholahti','ma-su 9.00 - 21.00','24.9158031','60.1636964','Itämerenkatu 23','00185','HELSINKI');
+INSERT INTO SmartPost VALUES(16,'Pakettiautomaatti, K-Supermarket Lauttasaari','ma-la 7.00 - 22.00, su 10.00 - 22.00','24.8831418','60.1538147','Kiviaidankatu 2','00215','HELSINKI');
+INSERT INTO SmartPost VALUES(17,'Pakettiautomaatti, S-market Itälahdenkatu','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.8800265','60.1537077','Itälahdenkatu 27','00215','HELSINKI');
+INSERT INTO SmartPost VALUES(18,'Pakettiautomaatti, Verkkokauppa.com Jätkäsaari','24h','24.9210624','60.1560519','Tyynenmerenkatu 11','00225','HELSINKI');
+INSERT INTO SmartPost VALUES(19,'SmartPost, Postin pääkonttori Ilmala','ma-pe 08.00-16.00','24.9186606','60.212732','Postintaival 7 A','00234','HELSINKI');
+INSERT INTO SmartPost VALUES(20,'Pakettiautomaatti, Postin pääkonttori Ilmala','ma-pe 8.00 - 16.00 ','24.9161717','60.2123669','Postintaival 7 A','00235','HELSINKI');
+INSERT INTO SmartPost VALUES(21,'Pakettiautomaatti, Alepa Pasilanraitio','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.9270159','60.1976848','Pasilanraitio 5','00245','HELSINKI');
+INSERT INTO SmartPost VALUES(22,'Pakettiautomaatti, Alepa Kisahalli','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.9218164','60.1852485','Mannerheimintie 76','00255','HELSINKI');
+INSERT INTO SmartPost VALUES(23,'Pakettiautomaatti, S-market Tullinpuomi','ma - pe 7.00 - 24.00, la 7.00 - 24.00, su 9.00 - 24.00','24.911209','60.1909738','Tukholmankatu 2','00255','HELSINKI');
+INSERT INTO SmartPost VALUES(24,'Smartpost, K-supermarket Kasarmi','ma-la 08.00 - 21.00, su 10.00 - 21.00','24.9170313','60.1769451','Pohjoinen Hesperiank. 33','00264','HELSINKI');
+INSERT INTO SmartPost VALUES(25,'Pakettiautomaatti, Alepa Pikku-Huopalahti','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.8985839','60.2035984','Mannerheimintie 170','00305','HELSINKI');
+INSERT INTO SmartPost VALUES(26,'Pakettiautomaatti, K-supermarket Fortuna','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.9010411','60.1978356','Mannerheimintie 160','00305','HELSINKI');
+INSERT INTO SmartPost VALUES(27,'Pakettiautomaatti, S-market Munkkivuori','ma-la 00.00 - 24.00, su 00.00 - 24.00','24.877714','60.205698','Raumantie 1','00355','HELSINKI');
+INSERT INTO SmartPost VALUES(28,'Smartpost, Lassila & Tikanoja','ma-pe 9.00 - 16.00','24.8767376','60.2215797','Valimotie 27','00384','HELSINKI');
+INSERT INTO SmartPost VALUES(29,'Smartpost, Lidl Pitäjänmäki','ma - la 8.00 - 21.00 , su 10.00 - 21.00','24.8783008','60.2148962','Höyläämötie 1','00384','HELSINKI');
+INSERT INTO SmartPost VALUES(30,'Pakettiautomaatti, S-market Pitäjänmäki','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.8697562','60.2175149','Takomotie 33','00385','HELSINKI');
+INSERT INTO SmartPost VALUES(31,'Smartpost, Noutopiste Konala ','ma-pe 8.00 - 17.00','24.8564333','60.2387753','Ruosilantie 10','00394','HELSINKI');
+INSERT INTO SmartPost VALUES(32,'Pakettiautomaatti, Kauppakeskus Ristikko','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.851291','60.2388521','Ajomiehentie 1','00395','HELSINKI');
+INSERT INTO SmartPost VALUES(33,'Pakettiautomaatti, S-market Konala','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.8458975','60.245307','Hankasuontie 2','00395','HELSINKI');
+INSERT INTO SmartPost VALUES(34,'Pakettiautomaatti, Alepa Pohjois-Haaga','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.8957391','60.2294983','Näyttelijäntie 14','00405','HELSINKI');
+INSERT INTO SmartPost VALUES(35,'Pakettiautomaatti, K-market Iso-Kappa','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 11.00 - 21.00','24.8855227','60.2427137','Vanhaistentie 3','00425','HELSINKI');
+INSERT INTO SmartPost VALUES(36,'Pakettiautomaatti, Prisma Kannelmäki','24h','24.8911572','60.2368501','Kantelettarentie 1','00425','HELSINKI');
+INSERT INTO SmartPost VALUES(37,'Pakettiautomaatti, S-market Vallila','ma-pe 06.30 - 24.00, la 07.00 - 24.00, su 09.00 - 24.00','24.9520203','60.1898602','Aleksis Kiven katu 11','00515','HELSINKI');
+INSERT INTO SmartPost VALUES(38,'Pakettiautomaatti, K-market Pasaati','ma-pe 07.00 - 21.00, la 08.00 - 21.00, su 12.00 - 18.00','24.9420605','60.1992659','Asemapäällikönkatu 3','00525','HELSINKI');
+INSERT INTO SmartPost VALUES(39,'Smartpost, Lidl Neljäs linja','ma-la 7.00 - 22.00, su 10.00 - 22.00','24.9536567','60.1820222','Neljäs linja 3-5','00534','HELSINKI');
+INSERT INTO SmartPost VALUES(40,'Pakettiautomaatti, S-Market Hakaniemi (Elanto)','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9497745','60.1777443','Siltasaarenkatu 6-10','00535','HELSINKI');
+INSERT INTO SmartPost VALUES(41,'Pakettiautomaatti, S-market Ympyrätalo','ma-la 7.00 - 24.00, su 9.00 - 24.00','24.9503903','60.1795945','Siltasaarenkatu 18-20','00535','HELSINKI');
+INSERT INTO SmartPost VALUES(42,'Smartpost, Lidl Arabia','ma-la 8.00 - 21.00, su 10.00 - 21.00','24.9663755','60.2028536','Hämeentie 109-111','00554','HELSINKI');
+INSERT INTO SmartPost VALUES(43,'Smartpost, Tokmanni Arabia ','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 18.00','24.9677844','60.2029339','Hämeentie 111','00554','HELSINKI');
+INSERT INTO SmartPost VALUES(44,'Pakettiautomaatti, S-market Arabia','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9677509','60.2032002','Hämeentie 111','00555','HELSINKI');
+INSERT INTO SmartPost VALUES(45,'SmartPosti,Lidl Tukkutori','ma - la 8.00 - 21.00 , su 10.00 - 21.00','24.9761586','60.1921893','Vanha Talvitie 12','00584','HELSINKI');
+INSERT INTO SmartPost VALUES(46,'Pakettiautomaatti, K-market Masurkka','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.9586577','60.2162027','Käpyläntie 8','00605','HELSINKI');
+INSERT INTO SmartPost VALUES(47,'Pakettiautomaatti, K-supermarket, Mustapekka','ma-pe 07.00 - 21.00, la 07.00 - 18.00, su 12.00 - 18.00','24.9476603','60.222605','Mäkitorpantie 1','00625','HELSINKI');
+INSERT INTO SmartPost VALUES(48,'Pakettiautomaatti, S-market Maunula','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9337206','60.2307116','Metsäpurontie 2','00635','HELSINKI');
+INSERT INTO SmartPost VALUES(49,'Pakettiautomaatti, S-Market Oulunkylä','ma-la 7.00 - 22.00, su 10.00 - 22.00','24.9622864','60.2284027','Kylänvanhimmantie 29','00645','HELSINKI');
+INSERT INTO SmartPost VALUES(50,'Smartpost, Lidl Pakila','ma-la 8.00 - 21.00, sun 10.00 - 21.00','24.9289822','60.2364255','Pakilantie 46-48','00664','HELSINKI');
+INSERT INTO SmartPost VALUES(51,'Pakettiautomaatti, S-market Pakila','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9282405','60.2392804','Pakilantie 61','00665','HELSINKI');
+INSERT INTO SmartPost VALUES(52,'Pakettiautomaatti, Alepa Paloheinä','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.92277','60.2476817','Pakilantie 95','00675','HELSINKI');
+INSERT INTO SmartPost VALUES(53,'Smartpost, Tokmanni Malmi ','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','25.0125869','60.2511956','Ala-Malmin tori 5','00704','HELSINKI');
+INSERT INTO SmartPost VALUES(54,'Pakettiautomaatti, Prisma Malmi','ma-la 7.00 - 21.00, su 10.00 - 21.00','25.010888','60.2519097','Malmin kauppatie 18','00705','HELSINKI');
+INSERT INTO SmartPost VALUES(55,'Pakettiautomaatti, K-citymarket, Malmi','ma-pe 8.00 - 21.00, la 08.00 - 21.00, su 10.00 - 18.00','25.0140447','60.2524458','Malminkaari 19','00705','HELSINKI');
+INSERT INTO SmartPost VALUES(56,'Pakettiautomaatti, Alepa Pihlajisto','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.0003731','60.2312086','Salpausseläntie 11','00715','HELSINKI');
+INSERT INTO SmartPost VALUES(57,'Pakettiautomaatti, Alepa Pukinmäki','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.9924348','60.2433755','Säterintie 2','00725','HELSINKI');
+INSERT INTO SmartPost VALUES(58,'SmartPost, Lidl Ala-Tikkurila','ma - la 8.00 - 21.00, sun 10.00 - 21.00','25.0290413','60.2843886','Aamuruskontie 1','00754','HELSINKI');
+INSERT INTO SmartPost VALUES(59,'Pakettiautomaatti, K-Market Heikinlaakso','ma-pe 7.00 - 23.00, la 8.00 - 22.00, su 10.00 - 22.00','25.0636812','60.2694637','Nummitie 2','00765','HELSINKI');
+INSERT INTO SmartPost VALUES(60,'Pakettiautomaatti, S-market Jakomäki','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.0760254','60.2613348','Huokotie 1','00775','HELSINKI');
+INSERT INTO SmartPost VALUES(61,'Pakettiautomaatti, S-Market Malmi','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9985731','60.2566343','Kirkonkyläntie 34','00785','HELSINKI');
+INSERT INTO SmartPost VALUES(62,'Pakettiautomaatti, Prisma Viikki','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.0081288','60.2272852','Viikintori 3','00795','HELSINKI');
+INSERT INTO SmartPost VALUES(63,'Pakettiautomaatti, K-supermarket Hertta','ma-pe 7.00 - 22.00, la 8.00 - 21.00, su 11.00 - 21.00','25.0291263','60.1941394','Hiihtäjäntie 2','00815','HELSINKI');
+INSERT INTO SmartPost VALUES(64,'Pakettiautomaatti,S-market Herttoniemi','24h','25.0326349','60.1930228','Hitsaajankatu 16','00815','HELSINKI');
+INSERT INTO SmartPost VALUES(65,'Pakettiautomaatti, Alepa Roihuvuori','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.0593469','60.2021385','Roihuvuorentie 26','00825','HELSINKI');
+INSERT INTO SmartPost VALUES(66,'Smartpost, Lidl Roihupelto','ma-la 8.00 - 21.00, su 10.00 - 21.00','25.0577195','60.2105535','Tulppatie 2','00884','HELSINKI');
+INSERT INTO SmartPost VALUES(67,'Pakettiautomaatti, Alepa Puotinharju','ma-pe 7.00 - 23.00, la 7.00 - 23.00, su 10.00 - 23.00','25.0835415','60.2139588','Korsholmantie 2','00905','HELSINKI');
+INSERT INTO SmartPost VALUES(68,'Pakettiautomaatti, Alepa Puotila','ma-la 7.00 - 23.00, su 9.00 - 23.00','25.0958636','60.212583','Klaavuntie 11','00915','HELSINKI');
+INSERT INTO SmartPost VALUES(69,'Pakettiautomaatti, S-market Myllypuro','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.0745293','60.2245519','Kiviparintie 2','00925','HELSINKI');
+INSERT INTO SmartPost VALUES(70,'Smartpost, Tokmanni Itis ','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 18.00','25.0829948','60.2129558','Turunlinnantie 4','00934','HELSINKI');
+INSERT INTO SmartPost VALUES(71,'Pakettiautomaatti,  K-citymarket Easton','ma-pe 8.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','25.0853952','60.2105157','Gotlanninkatu 13','00935','HELSINKI');
+INSERT INTO SmartPost VALUES(72,'SmartPost, Lidl Kontula','ma - la 8.00 - 21.00, su 10.00 - 21.00','25.0832622','60.2373499','Ostostie 4','00944','HELSINKI');
+INSERT INTO SmartPost VALUES(73,'Pakettiautomaatti, S-market Kontula','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.0836316','60.2383331','Ostostie 4','00945','HELSINKI');
+INSERT INTO SmartPost VALUES(74,'Pakettiautomaatti, K-supermarket Kontumarket','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.0829406','60.2359444','Keinulaudankuja 4','00945','HELSINKI');
+INSERT INTO SmartPost VALUES(75,'Pakettiautomaatti, Alepa Vartiokylä','ma-pe 7.00 - 23.00, la 7.00 - 23.00, su 10.00 - 23.00','25.1028568','60.2185395','Vartiokyläntie 3','00955','HELSINKI');
+INSERT INTO SmartPost VALUES(76,'Pakettiautomaatti, S-market Pohjois-Vuosaari','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.1402492','60.2217082','Mustalahdentie 2','00965','HELSINKI');
+INSERT INTO SmartPost VALUES(77,'Pakettiautomaatti, K-supermarket Masi','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 11.00 - 20.00','25.1111809','60.2381174','Pallaksentie 2','00975','HELSINKI');
+INSERT INTO SmartPost VALUES(78,'Smartpost, Tokmanni Columbus ','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 18.00','25.1450585','60.2073724','Vuotie 45','00984','HELSINKI');
+INSERT INTO SmartPost VALUES(79,'Smartpost, K-supermarket Vuosaari ','ma-pe 8.00 - 22.00, la 8.00 - 21.00, su 11.00 - 21.00','25.1447427','60.2076017','Tyynylaavantie 5','00984','HELSINKI');
+INSERT INTO SmartPost VALUES(80,'Pakettiautomaatti, S-market Columbus','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.1462624','60.2070945','Vuotie 45','00985','HELSINKI');
+INSERT INTO SmartPost VALUES(81,'Pakettiautomaatti, S-market Meri-Rastila','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.1178972','60.2041919','Meri-Rastilan kuja 2','00985','HELSINKI');
+INSERT INTO SmartPost VALUES(82,'Pakettiautomaatti, K-market Aurinkolahti','ma-pe 7.00 - 23.00, la 9.00 - 23.00, su 10.00 - 23.00','25.1554552','60.2051822','Leikosaarentie 48','00995','HELSINKI');
+INSERT INTO SmartPost VALUES(83,'Pakettiautomaatti, S-market Söderkulla','ma-pe 7.00 - 22.00, la 7.00 - 21.00, su 10.00 - 21.00','25.3307485','60.297792','Amiraalintie 2','01155','SÖDERKULLA');
+INSERT INTO SmartPost VALUES(84,'Smartpost, Tokmanni Porttipuisto','ma-la 08.00 - 21.00, su 10.00 - 19.00','25.0894301','60.280244','Porttisuontie 4 ','01204','VANTAA');
+INSERT INTO SmartPost VALUES(85,'Pakettiautomaatti, S-market Hakunila','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.1095852','60.2798355','Kannuskuja 2','01205','VANTAA');
+INSERT INTO SmartPost VALUES(86,'Pakettiautomaatti, Alepa Nissas','ma-pe 7.00 - 23.00, la 7.00 - 23.00, su 10.00 - 23.00','25.1222551','60.2845796','Nissaksentie 1','01205','VANTAA');
+INSERT INTO SmartPost VALUES(87,'Smartpost, K-market Tikkuri','ma-pe 08.00-21.00, la 09.00-18.00, su 12.00-18.00','25.041393','60.2923421','Asematie 4','01304','VANTAA');
+INSERT INTO SmartPost VALUES(88,'Pakettiautomaatti, K-Supermarket Koivuhaka','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.9983558','60.289118','Kuriiritie 23','01305','VANTAA');
+INSERT INTO SmartPost VALUES(89,'Pakettiautomaatti, K-Supermarket Yliveto','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','25.0321396','60.2940459','Peltolantie 1','01305','VANTAA');
+INSERT INTO SmartPost VALUES(90,'Pakettiautomaatti, Prisma Tikkurila','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.0342801','60.2928662','Unikkotie 13','01305','VANTAA');
+INSERT INTO SmartPost VALUES(91,'Pakettiautomaatti, K-market Kielotie','ma-pe 7.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','25.0402314','60.3009093','Kielotie 29','01305','VANTAA');
+INSERT INTO SmartPost VALUES(92,'Pakettiautomaatti, S-market Koivukylä','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.05549','60.3227726','Niinikuja 2','01365','VANTAA');
+INSERT INTO SmartPost VALUES(93,'Pakettiautomaatti, K-citymarket Koivukylä','ma-la 8.00 - 21.00,  su 10.00 - 20.00','25.0559645','60.3239114','Koivukylän puistotie 11','01405','VANTAA');
+INSERT INTO SmartPost VALUES(94,'Pakettiautomaatti, Alepa Päiväkumpu','ma-la 7.00 - 23.00, su 9.00 - 23.00','25.0973527','60.3274365','Laurintie 84','01425','VANTAA');
+INSERT INTO SmartPost VALUES(95,'Pakettiautomaatti, S-Market Korson asema','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.0795487','60.3510161','Metsolantie 2','01455','VANTAA');
+INSERT INTO SmartPost VALUES(96,'Pakettiautomaatti, S-market Korso','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.0752471','60.3484086','Maakotkantie 19','01455','VANTAA');
+INSERT INTO SmartPost VALUES(97,'Pakettiautomaatti, K-Supermarket Nikinmäki','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.1333312','60.3455536','Paarmatie 2','01495','VANTAA');
+INSERT INTO SmartPost VALUES(98,'Pakettiautomaatti, K-citymarket Tammisto','ma-pe 8.00 - 22.00, la 8.00 - 22.00,  su 11.00 - 21.00','24.9726806','60.2733212','Tammiston kauppatie 9','01515','VANTAA');
+INSERT INTO SmartPost VALUES(99,'Pakettiautomaatti, Kauppakeskus Jumbo','ma-la 9.00 - 21.00, su 11.00 - 18.00','24.9619882','60.2918897','Vantaanportinkatu 4','01515','VANTAA');
+INSERT INTO SmartPost VALUES(100,'Pakettiautomaatti, Alepa Kartanonkoski','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.9700745','60.2832673','Hagelstamintie 32','01525','VANTAA');
+INSERT INTO SmartPost VALUES(101,'Smartpost, Postin yrityspiste','24h','24.9270453','60.3003892','Postimiehenkuja','01534','VANTAA');
+INSERT INTO SmartPost VALUES(102,'Smartpost, Tokmanni Isomyyri','ma-la 08 - 21.00, su 12.00 - 18.00','24.8537721','60.2632024','Liesitori 1 ','01604','VANTAA');
+INSERT INTO SmartPost VALUES(103,'Pakettiautomaatti, Kauppakeskus Myyrmanni','ma-pe 7.00 - 22.00, la 7.00 - 22.00, su 09.00 - 22.00','24.8516915','60.2598169','Iskoskuja 3 A 1','01605','VANTAA');
+INSERT INTO SmartPost VALUES(104,'Pakettiautomaatti, K-market Louhela','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 12.00 - 21.00','24.8564364','60.270349','Louhelantie 3','01605','VANTAA');
+INSERT INTO SmartPost VALUES(105,'Pakettiautomaatti, S-market Kaivoksela','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.870051','60.2629958','Ukonkivenpolku 11','01615','VANTAA');
+INSERT INTO SmartPost VALUES(106,'Pakettiautomaatti, K-Supermarket Martinlaakso','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.8445186','60.2812103','Laajavuorenkuja 2','01625','VANTAA');
+INSERT INTO SmartPost VALUES(107,'Pakettiautomaatti, S-market Martinlaakso','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.8540654','60.2782614','Kivivuorentie 4','01625','VANTAA');
+INSERT INTO SmartPost VALUES(108,'Pakettiautomaatti, K-Supermarket Hämeenkylä','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.7958254','60.269098','Ainontie 1','01635','VANTAA');
+INSERT INTO SmartPost VALUES(109,'Pakettiautomaatti, K-Supermarket Herkkupähkinä','ma-pe 7.00 - 24.00, la 7.00 - 24.00, su 12.00 - 24.00','24.8106803','60.2651105','Ulkoniitynkuja 4','01665','VANTAA');
+INSERT INTO SmartPost VALUES(110,'Pakettiautomaatti, K-market Kivistö','ma-pe 07.00 - 23.00, la 07.00 - 23.00, su 09.00 - 23.00','24.8533689','60.3190793','Ruusukvartsinkatu 6     ','01705','VANTAA');
+INSERT INTO SmartPost VALUES(111,'Smartpost, K-Market Lepsämäntie','ma-la 8.00 - 22.00, su 10.00 - 22.00 ','24.7472077','60.3817952','Lepsämäntie 1','01804','KLAUKKALA');
+INSERT INTO SmartPost VALUES(112,'Pakettiautomaatti, K-citymarket Klaukkala','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 20.00','24.7583501','60.3786015','Viirintie 9','01805','KLAUKKALA');
+INSERT INTO SmartPost VALUES(113,'Pakettiautomaatti, S-market Klaukkala','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.759604','60.3739799','Isoseppälä 14','01805','KLAUKKALA');
+INSERT INTO SmartPost VALUES(114,'Pakettiautomaatti, S-market Nurmijärvi','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.8219564','60.4577451','Kauppanummentie 2','01905','NURMIJÄRVI');
+INSERT INTO SmartPost VALUES(115,'Pakettiautomaatti, Posti Tapiola','ma-pe 9.00-20.00, la 10.00-15.00 ','24.8015767','60.1756283','Länsituulentie 4','02105','ESPOO');
+INSERT INTO SmartPost VALUES(116,'Pakettiautomaatti, Kauppakeskus Ainoa','ma-pe 7.00-23.00, la 7.00-21.00, su 10.00-21.00','24.8049839','60.1757597','Länsituulentie 7','02105','ESPOO');
+INSERT INTO SmartPost VALUES(117,'Pakettiautomaatti, S-market Pohjois-Tapiola','24h','24.8077325','60.1853055','Kalevalantie 3','02135','ESPOO');
+INSERT INTO SmartPost VALUES(118,'Pakettiautomaatti, Aalto-Yliopisto Otaniemi','24h','24.8262549','60.1892631','Sähkömiehentie 3','02155','ESPOO');
+INSERT INTO SmartPost VALUES(119,'Pakettiautomaatti, S-market Haukilahti','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.7761007','60.1629703','Ukkohauentie 11-13','02175','ESPOO');
+INSERT INTO SmartPost VALUES(120,'Smartpost, Kauppakeskus Niitty','ma-su 04.30  -00.30 ','24.7637834','60.1707995','Merituulentie 36','02204','ESPOO');
+INSERT INTO SmartPost VALUES(121,'Pakettiautomaatti, Prisma Olari','24h','24.7341209','60.1669858','Komeetankatu 2','02215','ESPOO');
+INSERT INTO SmartPost VALUES(122,'Pakettiautomaatti, S-Market Olari','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.7264745','60.1725343','Kuunkatu 3','02215','ESPOO');
+INSERT INTO SmartPost VALUES(123,'Pakettiautomaatti, Kauppakeskus Iso Omena','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.7381617','60.1624493','Piispansilta 11','02235','ESPOO');
+INSERT INTO SmartPost VALUES(124,'Pakettiautomaatti, Alepa Matinkylä','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.7398646','60.1578737','Matinkatu 22','02235','ESPOO');
+INSERT INTO SmartPost VALUES(125,'Smartpost, Tokmanni Olari','ma-pe 08.00 - 21.00, la 08.00 - 19.00, su 11.00 - 18.00','24.7302788','60.1652136','Pihatörmä 1','02244','ESPOO');
+INSERT INTO SmartPost VALUES(126,'SmartPost, K-market Iivisniemi','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','24.6916831','60.1491354','Iivisniemenkatu 3','02264','ESPOO');
+INSERT INTO SmartPost VALUES(127,'Pakettiautomaatti, Merituulen kauppakeskus','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.7094991','60.1626785','Isonniitynkuja 2','02275','ESPOO');
+INSERT INTO SmartPost VALUES(128,'Pakettiautomaatti, S-market Malminmäki','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.6781264','60.1813017','Malminkorpi 1','02285','ESPOO');
+INSERT INTO SmartPost VALUES(129,'Smartpost, Lidl Nöykkiö','ma-la 8.00 - 21.00, sun 10.00 - 21.00','24.6671288','60.1545696','Keskustie 1','02304','ESPOO');
+INSERT INTO SmartPost VALUES(130,'Pakettiautomaatti, S-Market Kivenlahdentie','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.6585375','60.1525526','Kivenlahdentie 9','02325','ESPOO');
+INSERT INTO SmartPost VALUES(131,'Pakettiautomaatti, Kauppakeskus Pikkulaiva','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 11.00 - 19.00','24.6552327','60.1511793','Ulappakatu 2','02325','ESPOO');
+INSERT INTO SmartPost VALUES(132,'Pakettiautomaatti, Alepa Kivenlahti','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.637296','60.154039','Merivirta 3','02325','ESPOO');
+INSERT INTO SmartPost VALUES(133,'Pakettiautomaatti, S-market Saunalahti','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.6189014','60.1677503','Magneettikatu 2','02335','ESPOO');
+INSERT INTO SmartPost VALUES(134,'Pakettiautomaatti, Alepa Soukka','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.6729856','60.1380934','Soukantie 4','02365','ESPOO');
+INSERT INTO SmartPost VALUES(135,'Pakettiautomaatti, K-citymarket Kirkkonummi','ma-pe 08.00 - 21.00, la 08.00 - 21.00, su 10.00 - 21.00','24.4442277','60.1193939','Asemankulma 2','02405','KIRKKONUMMI');
+INSERT INTO SmartPost VALUES(136,'Pakettiautomaatti, Sale Kirkkonummi','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.4361064','60.125199','Toritie 3','02405','KIRKKONUMMI');
+INSERT INTO SmartPost VALUES(137,'Pakettiautomaatti, Prisma Kirkkonummi','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.4451503','60.1189612','Munkinmäentie 29','02405','KIRKKONUMMI');
+INSERT INTO SmartPost VALUES(138,'Smartpost, K-market Masala ','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 10.00 - 20.00','24.5352571','60.1579184','Tinankuja 1','02434','MASALA');
+INSERT INTO SmartPost VALUES(139,'Pakettiautomaatti, Sale Masala','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 9.00 - 21.00','24.5354548','60.1580684','Tinankuja 2','02435','MASALA');
+INSERT INTO SmartPost VALUES(140,'Smartpost, S-market Siuntio','ma-pe 7.00 - 21.00, la 8.00 - 19.00, su 12.00-19.00','24.2259891','60.1393026','Flemingintie 1','02584','SIUNTIO');
+INSERT INTO SmartPost VALUES(141,'Smartpost, Tokmanni Sello','ma-pe 08.00 - 21.00, la 09.00 - 19.00, su 11.00 - 18.00','24.8106914','60.2180601','Leppävaarankatu 3-9','02604','ESPOO');
+INSERT INTO SmartPost VALUES(142,'Pakettiautomaatti, Prisma Sello','ma-pe 8.00 - 21.00, la 8.00-19.00, su 10.00 - 19.00','24.8135767','60.2174189','Leppävaarankatu 5','02605','ESPOO');
+INSERT INTO SmartPost VALUES(143,'Pakettiautomaatti, Kauppakeskus Sello','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.8117083','60.2171759','Leppävaarankatu 3 A','02605','ESPOO');
+INSERT INTO SmartPost VALUES(144,'Pakettiautomaatti, K-market Kilo','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.781975','60.2169982','Kilonpuistonkatu 14','02615','ESPOO');
+INSERT INTO SmartPost VALUES(145,'Pakettiautomaatti, S-market Karaportti','ma - pe 7.00 - 22.00, la 9.00 - 22.00, su 9.00 - 22.00','24.7602834','60.2251094','Karaniityntie 2','02615','ESPOO');
+INSERT INTO SmartPost VALUES(146,'Pakettiautomaatti, S-Market Nihtisilta','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.7552207','60.209616','Kutojantie 1','02635','ESPOO');
+INSERT INTO SmartPost VALUES(147,'Pakettiautomaatti, K-supermarket, Mankkaa','ma-pe 8.00 - 21.00, la 08.00 - 18.00, su 12.00 - 18.00','24.76609','60.2039408','Sinikalliontie 1','02635','ESPOO');
+INSERT INTO SmartPost VALUES(148,'Pakettiautomaatti, Alepa Lintuvaara','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.8137956','60.2344183','Linnuntie 2','02665','ESPOO');
+INSERT INTO SmartPost VALUES(149,'Pakettiautomaatti, S-market Pohjois Kauniainen','ma-pe 7.00 - 21.00, la 8.00 - 18.00','24.7274681','60.2126094','Asematie 1','02705','KAUNIAINEN');
+INSERT INTO SmartPost VALUES(150,'Pakettiautomaatti, Alepa Viherlaakso','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.7403245','60.226364','Kuusiniementie 1','02715','ESPOO');
+INSERT INTO SmartPost VALUES(151,'Pakettiautomaatti, S-market Lähderanta','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.7410393','60.2410893','Lähderanta 1','02725','ESPOO');
+INSERT INTO SmartPost VALUES(152,'Pakettiautomaatti, Alepa Tuomarila','ma-la 7.00 - 23.00, su 9.00 - 23.00','24.6951056','60.2013632','Pitkännotkontie 27','02755','ESPOO');
+INSERT INTO SmartPost VALUES(153,'Pakettiautomaatti, K-market Espoon keskus','ma-pe 6.30 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','24.6551563','60.2056987','Virastopiha 1','02775','ESPOO');
+INSERT INTO SmartPost VALUES(154,'Pakettiautomaatti, S-market Espoon keskus','ma-pe 7.00 - 22.00, la 7.00 - 22.00, su 9.00 - 22.00','24.6605728','60.2038465','Siltakatu 13','02775','ESPOO');
+INSERT INTO SmartPost VALUES(155,'Pakettiautomaatti, Kauppakeskus Espoontori','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','24.6550027','60.2038381','Kamreerintie 3','02775','ESPOO');
+INSERT INTO SmartPost VALUES(156,'Smartpost, Lidl Kauklahti','ma-la 8.00 - 21.00, sun 10.00 - 21.00','24.5887854','60.1883978','Räävelintie 2','02784','ESPOO');
+INSERT INTO SmartPost VALUES(157,'Pakettiautomaatti, S-market Veikkola','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 11.00 - 21.00','24.4442988','60.2689063','Koskentie 2','02885','VEIKKOLA');
+INSERT INTO SmartPost VALUES(158,'Pakettiautomaatti, S-market Juvankartano','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.7572615','60.2699187','Juvankartanontie 33','02925','ESPOO');
+INSERT INTO SmartPost VALUES(159,'Pakettiautomaatti, K-Supermarket Aurora','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.7007553','60.2403901','Kylänportti 16','02945','ESPOO');
+INSERT INTO SmartPost VALUES(160,'Pakettiautomaatti, K-supermarket Nummela','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.3190928','60.3337946','Keskikuja 3','03105','NUMMELA');
+INSERT INTO SmartPost VALUES(161,'Pakettiautomaatti, K-citymarket Nummela','ma-la 8.00 - 21.00,  su 10.00 - 21.00','24.3297117','60.3325082','Tuusankaari 1','03105','NUMMELA');
+INSERT INTO SmartPost VALUES(162,'Pakettiautomaatti, Prisma Nummela','ma-la 7.00 - 21.00, su 10.00 - 21.00','24.3232763','60.3321759','Naaranpajuntie 3','03105','NUMMELA');
+INSERT INTO SmartPost VALUES(163,'SmartPost, S-market Otalampi','ma - la 7.00 - 21.00, su 10.00 - 21.00','24.4805442','60.4001926','Torpparintie 38','03304','OTALAMPI');
+INSERT INTO SmartPost VALUES(164,'Pakettiautomaatti, S-market Vihti','ma-la 7.00 - 21.00, su 10.00 - 21.00','24.3244595','60.416098','Niuhalanraitti 3','03405','VIHTI');
+INSERT INTO SmartPost VALUES(165,'Smartpost, K-Market Huhdintie','ma - la 7.00 - 22.00, su 10.00 - 22.00','24.2146209','60.5354346','Huhdintie 10-12','03604','KARKKILA');
+INSERT INTO SmartPost VALUES(166,'Pakettiautomaatti, S-market Karkkila','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 10.00 - 20.00','24.2315885','60.5344335','Mäntylänkatu 1','03605','KARKKILA');
+INSERT INTO SmartPost VALUES(167,'Smartpost, S-market Nikkilä','ma-pe 7.00 - 22.00, la 7.00 - 21.00, su 10.00 - 21.00','25.2710477','60.3766706','Kaskiniitynkuja 1','04134','SIPOO');
+INSERT INTO SmartPost VALUES(168,'Pakettiautomaatti, Prisma Kerava','24h','25.1046294','60.4027378','Kauppakaari 2','04205','KERAVA');
+INSERT INTO SmartPost VALUES(169,'Pakettiautomaatti, K-citymarket Kerava','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','25.1025222','60.3996144','Nikonkatu 1','04205','KERAVA');
+INSERT INTO SmartPost VALUES(170,'Smartpost, K-market Kalevantori','ma - pe 6.00 - 21.00, la 8.00 - 21.00, su 10.00 - 21.00','25.0900294','60.4202327','Kalevankatu 65','04234','KERAVA');
+INSERT INTO SmartPost VALUES(171,'Smartpost, Tokmanni Kerava','ma - la 8.00 - 21.00 , su 10.00 - 18.00','25.109771','60.3905969','Peltomäenkatu 2-4','04254','KERAVA');
+INSERT INTO SmartPost VALUES(172,'Smartpost, Tokmanni Hyrylä ','ma - la 8.00 - 21.00, su 10.00- 18.00','25.0269397','60.383574','Sulantie 1','04304','TUUSULA');
+INSERT INTO SmartPost VALUES(173,'Pakettiautomaatti, S-market Tuusula Hyrylänkatu 6','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.0198269','60.3978146','Hyrylänkatu 6','04305','TUUSULA');
+INSERT INTO SmartPost VALUES(174,'Pakettiautomaatti, Alepa Riihikallio','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.0180763','60.374648','Haukantie 2','04325','TUUSULA');
+INSERT INTO SmartPost VALUES(175,'Pakettiautomaatti, K-supermarket Pajala','ma-pe 7.00 - 21.00, la 7.00 - 21.00, su 10.00 - 21.00','25.084631','60.4792391','Pajalantie 19','04405','JÄRVENPÄÄ');
+INSERT INTO SmartPost VALUES(176,'Pakettiautomaatti, Prisma Järvenpää','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.0836987','60.4698942','Rantakatu 5 ','04405','JÄRVENPÄÄ');
+INSERT INTO SmartPost VALUES(177,'Pakettiautomaatti, CM Järvenpää','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 18.00','25.1025394','60.477354','Helsingintie 41','04415','JÄRVENPÄÄ');
+INSERT INTO SmartPost VALUES(178,'Smartpost, Tokmanni Järvenpää','ma - la 8.00 - 21.00 , su 10.00 - 19.00','25.1054188','60.4775881','Helsingintie 43','04434','JÄRVENPÄÄ');
+INSERT INTO SmartPost VALUES(179,'Pakettiautomaatti, Alepa Pellonkulma','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.1184283','60.4934965','Laurilantie 35','04435','JÄRVENPÄÄ');
+INSERT INTO SmartPost VALUES(180,'Smartpost, K-Market Jamppa','ma - la 7.00 - 22.00, su 10.00 - 22.00','25.0672445','60.49306','Oksapolku 1','04444','JÄRVENPÄÄ');
+INSERT INTO SmartPost VALUES(181,'Smartpost, Alepa Kellokoski','ma-la 6.30 - 23.00, su 9.00 - 23.00','25.1105798','60.5315235','Vanha Valtatie 191','04504','KELLOKOSKI');
+INSERT INTO SmartPost VALUES(182,'Pakettiautomaatti, K-citymarket Mäntsälä','ma-la 8.00 - 21.00,  su 10.00 - 19.00','25.3179457','60.6375328','Sälinkääntie 2','04605','MÄNTSÄLÄ');
+INSERT INTO SmartPost VALUES(183,'Pakettiautomaatti, S-market Mäntsälä','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.3171006','60.6351535','Keskuskatu 1','04605','MÄNTSÄLÄ');
+INSERT INTO SmartPost VALUES(184,'Pakettiautomaatti, S-market Rajamäki','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.7511972','60.527678','Kiljavantie 3','05205','RAJAMÄKI');
+INSERT INTO SmartPost VALUES(185,'Pakettiautomaatti, S-market Jokela','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.9667614','60.5535806','Osulankuja 5','05405','JOKELA');
+INSERT INTO SmartPost VALUES(186,'Pakettiautomaatti, K-market Hakalantori','ma-pe 6.00 - 22.00, la 7.00 - 22.00, su 10.00 - 22.00','24.8687404','60.6160192','Lehmustie 1','05465','HYVINKÄÄ');
+INSERT INTO SmartPost VALUES(187,'Smartpost, K-citymarket Hyvinkää','ma-la 8.00 - 21.00, su 10.00 - 21.00','24.8637073','60.6322027','Hämeenkatu 9','05804','HYVINKÄÄ');
+INSERT INTO SmartPost VALUES(188,'Pakettiautomaatti, K-citymarket Hyvinkää','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 18.00','24.867703','60.6364751','Hämeenkatu 9','05805','HYVINKÄÄ');
+INSERT INTO SmartPost VALUES(189,'Pakettiautomaatti, Prisma Hyvinkää','ma-la 7.00 - 23.00, su 10.00 - 23.00','24.866464','60.6301169','Kauppakuja 2','05805','HYVINKÄÄ');
+INSERT INTO SmartPost VALUES(190,'Pakettiautomaatti, S-market Hyvinkää','ma-la 7.00 - 22.00, su 9.00 - 22.00','24.857469','60.6292972','Uudenmaankatu 3','05805','HYVINKÄÄ');
+INSERT INTO SmartPost VALUES(191,'Smartpost, S-market Vehkoja','ma-la 06.00 - 22.00, su 07.00 - 22.00','24.8363526','60.6083825','Uudenmaankatu 106','05844','HYVINKÄÄ');
+INSERT INTO SmartPost VALUES(192,'Pakettiautomaatti, Sale Huhtinen','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 12.00 - 20.00','25.6692899','60.4085358','Kesätuulentie 2 ','06105','PORVOO');
+INSERT INTO SmartPost VALUES(193,'Pakettiautomaatti, S-market Näsi','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.6512344','60.3876303','Aleksanterinkaari 1','06105','PORVOO');
+INSERT INTO SmartPost VALUES(194,'Pakettiautomaatti, S-market Porvoo keskusta','ma-pe 7.00 - 20.00, la 8.00 - 18.00, su 10.00 - 18.00','25.6641142','60.3941824','Rauhankatu 24','06105','PORVOO');
+INSERT INTO SmartPost VALUES(195,'Smartpost, Tokmanni Porvoo','ma - pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 19.00','25.6895319','60.4017344','Asentajantie 5','06154','PORVOO');
+INSERT INTO SmartPost VALUES(196,'Pakettiautomaatti, K-Market Gammelbacka','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','25.632853','60.3743202','Suolaketie 2','06405','PORVOO');
+INSERT INTO SmartPost VALUES(197,'Smarpost, Tarmo lähikauppa Hinthaara','ma-pe 8.00 - 20.00, la 10.00 - 18.00','25.4809109','60.4002732','Pornaistentie 6','07114','HINTHAARA');
+INSERT INTO SmartPost VALUES(198,'SmartPost, Sale Pukkila','ma-la 8-21, su 10-21','25.5803733','60.645036','Koivulinnantie 10','07564','PUKKILA');
+INSERT INTO SmartPost VALUES(199,'Pakettiautomaatti, S-market Loviisa','ma-pe 7.00 - 22.00, la 7.00 - 21.00, su 10.00 - 21.00','26.2064738','60.4528733','Arkkitehdintie 5','07905','LOVIISA');
+INSERT INTO SmartPost VALUES(200,'Pakettiautomaatti, Kauppakeskus Lohjantähti','ma-pe 8.00-20.00, la 8.00-18.00','24.0668714','60.2497856','Kauppakatu 5-9','08105','LOHJA');
+INSERT INTO SmartPost VALUES(201,'Pakettiautomaatti, Prisma Lohja','ma-la 7.00 - 21.00, su 10.00 - 21.00','24.061866','60.2482985','Laurinkatu 37-41','08105','LOHJA');
+INSERT INTO SmartPost VALUES(202,'Smartpost, Lidl Lohja','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 19.00','24.027552','60.2260581','Reunakatu 1','08204','LOHJA');
+INSERT INTO SmartPost VALUES(203,'Pakettiautomaatti, K-citymarket Lohja','ma-la 8.00 - 21.00,  su 10.00 - 18.00','24.0273017','60.2283862','Ojamonharjuntie 61','08205','LOHJA');
+INSERT INTO SmartPost VALUES(204,'Pakettiautomaatti, K-supermarket Karjaa','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.6631539','60.0706244','Ratakatu 59','10305','KARJAA');
+INSERT INTO SmartPost VALUES(205,'Pakettiautomaatti, S-market Karjaa','ma-pe 7.00 - 21.00, la 8.00 - 20.00, su 12.00 - 20.00','23.6641052','60.0711452','Koulukatu 1','10305','KARJAA');
+INSERT INTO SmartPost VALUES(206,'Smartpost, S-market Pohja','ma - pe 8.00 - 21.00, la 9.00 - 18.00, su 12.00 - 16.00','23.5263667','60.0963733','Pohjantie 2','10424','POHJANKURU');
+INSERT INTO SmartPost VALUES(207,'Pakettiautomaatti, K-supermarket Ekenäs','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.4495258','59.9794761','Rautatienkatu 19','10605','TAMMISAARI');
+INSERT INTO SmartPost VALUES(208,'Pakettiautomaatti, S-market Tammisaari','ma-pe 7.00 - 21.00, la 8.00 - 20.00, su 12.00 - 20.00','23.4417368','59.9787617','Rautatienkatu 5','10605','TAMMISAARI');
+INSERT INTO SmartPost VALUES(209,'Pakettiautomaatti, K-supermarket Hanko','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','22.9658562','59.8283461','Revellinkatu 2','10905','HANKO');
+INSERT INTO SmartPost VALUES(210,'Pakettiautomaatti, S-market Hirsimäki','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 11.00 - 19.00','24.7633619','60.7317106','Lopentie 22-24','11105','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(211,'Pakettiautomaatti, K-supermarket Keskuskatu','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','24.7712263','60.7391541','Keskuskatu 15','11105','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(212,'Pakettiautomaatti, ABC Riihimäki','ma-su 6.00 - 24.00','24.7376819','60.7524523','Kinturintie','11125','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(213,'Smartpost, K-Market Ruokasaari','ma-la 07.00 - 21.00, su 10.00 - 21.00','24.8018084','60.7392239','Peltosaarenkatu 1','11134','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(214,'Pakettiautomaatti, Prisma Riihimäki','ma-la 8.00 - 21.00, su 11.00 - 19.00','24.7757688','60.7324172','Voimalankatu 2','11135','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(215,'SmartPost, Würthintie 1','24h','24.7517572','60.692593','Würthintie 1','11714','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(216,'Pakettiautomaatti, K-citymarket Riihimäki','ma-la 8.00 - 21.00, su 10.00 - 18.00','24.7341096','60.7219102','Merkoksenkatu 5','11715','RIIHIMÄKI');
+INSERT INTO SmartPost VALUES(217,'Pakettiautomaatti, Kauppakeskus Goodman','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','24.4538881','60.9936715','Kaivokatu 7','13105','HÄMEENLINNA');
+INSERT INTO SmartPost VALUES(218,'Pakettiautomaatti, K-citymarket Hämeensaari','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','24.4609105','60.9923316','Hämeensaarentie 7','13105','HÄMEENLINNA');
+INSERT INTO SmartPost VALUES(219,'Pakettiautomaatti, K-citymarket Tiiriö','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 18.00','24.4192014','61.0066493','Katsastusmiehentie 6','13135','HÄMEENLINNA');
+INSERT INTO SmartPost VALUES(220,'Pakettiautomaatti, Prisma Hämeenlinna','ma-la 8.00 - 21.00, su 11.00 - 19.00','24.4114691','61.0110378','Wartiamäentie 2','13135','HÄMEENLINNA');
+INSERT INTO SmartPost VALUES(221,'Pakettiautomaatti, S-market Idänpää','ma-la 8.00 - 21.00, su 11.00 - 19.00','24.5063037','61.005942','Laaniitynkatu 2','13215','HÄMEENLINNA');
+INSERT INTO SmartPost VALUES(222,'Pakettiautomaatti, S-market Jukola','ma-la 7.00 - 21.00, su 11.00 - 19.00','24.4154386','60.9855916','Ahvenistontie 13','13505','HÄMEENLINNA');
+INSERT INTO SmartPost VALUES(223,'Pakettiautomaatti, S-market Parola','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 10.00 - 18.00','24.3719665','61.0541655','Kinnalantie 4','13725','PAROLA');
+INSERT INTO SmartPost VALUES(224,'Pakettiautomaatti, S-market Turenki','ma-pe 7.00 - 21.00, la 7.00 - 19.00, su 11.00 - 19.00','24.6498216','60.9223293','Harvialantie 5','14205','TURENKI');
+INSERT INTO SmartPost VALUES(225,'SmartPost Askotalo, vain kulkuoikeuden haltijoille','ma - pe 7.00 - 16.30','25.6709556','60.976364','Askonkatu 9','15104','LAHTI');
+INSERT INTO SmartPost VALUES(226,'Smartpost, Automaattikauppa Pyrhönen Lahti','24h','25.6452455','60.9824986','Hollolankatu 7','15114','LAHTI');
+INSERT INTO SmartPost VALUES(227,'Pakettiautomaatti, S-market Sokos Lahti','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','25.6593514','60.9827457','Aleksanterinkatu 19-21','15115','LAHTI');
+INSERT INTO SmartPost VALUES(228,'Pakettiautomaatti, K-Supermarket Trio','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','25.6622219','60.9826522','Aleksanterinkatu 18','15145','LAHTI');
+INSERT INTO SmartPost VALUES(229,'Pakettiautomaatti, K-citymarket Paavola','ma-la 8.00 - 21.00, su 11.00 - 20.00','25.6663403','60.98637','Kauppakatu 13','15145','LAHTI');
+INSERT INTO SmartPost VALUES(230,'Pakettiautomaatti, Kauppakeskus Karisma','ma-pe 9.00 - 21.00, la 08.00 - 21.00, su 11.00 - 20.00','25.736976','60.9828924','Kauppiaankatu 2','15165','LAHTI');
+INSERT INTO SmartPost VALUES(231,'Pakettiautomaatti, S-market Tonttila','ma-la 8.00 - 21.00, su 11.00 - 19.00','25.706157','60.983201','Heinolan Vanhatie 25','15175','LAHTI');
+INSERT INTO SmartPost VALUES(232,'Pakettiautomaatti, K-Market Kivistönmäki','24h','25.6645463','60.9950121','Lahdenkatu 48','15215','LAHTI');
+INSERT INTO SmartPost VALUES(233,'Pakettiautomaatti, Prisma Holma Lahti','ma-la 8.00 - 21.00, su 11.00 - 19.00','25.6807906','61.0081993','Johanneksenkatu 4','15245','LAHTI');
+INSERT INTO SmartPost VALUES(234,'Smartpost, K-Supermarket Ahtiala','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 10.00 - 21.00','25.7571756','60.9986142','Alasenkatu 1','15304','LAHTI');
+INSERT INTO SmartPost VALUES(235,'Pakettiautomaatti, K-citymarket Laune','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 11.00 - 20.00','25.6596261','60.9643541','Ajokatu 53','15505','LAHTI');
+INSERT INTO SmartPost VALUES(236,'Pakettiautomaatti, Prisma Laune','ma-la 8.00 - 21.00, su 11.00 - 19.00','25.6582995','60.96122','Ajokatu 83','15505','LAHTI');
+INSERT INTO SmartPost VALUES(237,'Pakettiautomaatti, S-market Nastola','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 11.00 - 18.00','25.9628184','60.9356506','Rakokiventie 19','15555','NASTOLA');
+INSERT INTO SmartPost VALUES(238,'Pakettiautomaatti, S-market Villähde','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 19.00','25.8958229','60.9458186','Kauppakaari 4','15565','NASTOLA');
+INSERT INTO SmartPost VALUES(239,'Automaatti, ABC Renkomäki','24h','25.6339513','60.9355915','Simolanmutka 1','15685','LAHTI');
+INSERT INTO SmartPost VALUES(240,'Pakettiautomaatti, S-market Hennala','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.629198','60.9695464','Helsingintie 126','15705','LAHTI');
+INSERT INTO SmartPost VALUES(241,'Pakettiautomaatti, K-Supermarket Okeroinen','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.5814219','60.9666074','Hennalankatu 5','15815','LAHTI');
+INSERT INTO SmartPost VALUES(242,'Pakettiautomaatti, S-market Metsäkangas','ma-la 7.00 - 21.00, su 11.00 - 19.00','25.5930206','60.9809366','Petsamonkatu 9','15835','LAHTI');
+INSERT INTO SmartPost VALUES(243,'Pakettiautomaatti, Prisma Hollola','ma-pe 7.00 - 22.00, la 7.00 - 22.00, su 9.00 - 22.00','25.5163473','60.9889715','Kansankatu 8','15875','HOLLOLA');
+INSERT INTO SmartPost VALUES(244,'Pakettiautomaatti, K-supermarket Orimattila','ma-pe 7.00 - 21.00, la 8.00 - 20.00, su 10.00 - 18.00','25.7350965','60.8031085','Käkeläntie 3','16305','ORIMATTILA');
+INSERT INTO SmartPost VALUES(245,'Pakettiautomaatti, Tokmanni Orimattila','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','25.729709','60.8120829','Lahdentie 109','16305','ORIMATTILA');
+INSERT INTO SmartPost VALUES(246,'Pakettiautomaatti, S-market Lammi','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 19.00','25.0112159','61.0796447','Mommilantie 1','16905','LAMMI');
+INSERT INTO SmartPost VALUES(247,'Pakettiautomaatti, K-supermarket Vääksy','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.5456854','61.1732407','Maakaupantie 1','17205','VÄÄKSY');
+INSERT INTO SmartPost VALUES(248,'Pakettiautomaatti, K-citymarket Heinola','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','25.9983758','61.1930174','Hevossaarentie 1','18105','HEINOLA');
+INSERT INTO SmartPost VALUES(249,'Pakettiautomaatti, S-market Heinoska','ma-pe 7.00 - 21.00, la 7.00 - 19.00, su 11.00 - 19.00','26.0392687','61.2057811','Siltakatu 31','18105','HEINOLA');
+INSERT INTO SmartPost VALUES(250,'Pakettiautomaatti, ABC Koulukatu','24h','22.2463625','60.4534582','Koulukatu 29','20105','TURKU');
+INSERT INTO SmartPost VALUES(251,'Pakettiautomaatti, Stockmann Turku','ma-pe 9.00 - 20.00, la 9.00 - 19.00, su 11.00 - 18.00','22.2628761','60.4509017','Yliopistonkatu 22','20105','TURKU');
+INSERT INTO SmartPost VALUES(252,'Pakettiautomaatti, Sokos Wiklund','ma-pe 7.00 - 22.00, la 7.00 - 21.00, su 10.00 - 21.00','22.269398','60.451655','Eerikinkatu 11','20105','TURKU');
+INSERT INTO SmartPost VALUES(253,'Pakettiautomaatti, K-Market Verkahovi','ma - pe 7.00 - 23.00, la 8.00 - 23.00, su 9.00 - 23.00','22.2729664','60.4575364','Verkatehtaankatu 4','20105','TURKU');
+INSERT INTO SmartPost VALUES(254,'Pakettiautomaatti, K-supermarket Kivikukkaro','ma-pe 8.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','22.2608697','60.4505421','Yliopistonkatu 29 B','20105','TURKU');
+INSERT INTO SmartPost VALUES(255,'Pakettiautomaatti, K-market Härkämäki','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','22.1986716','60.4622784','Ieskatu 1','20215','TURKU');
+INSERT INTO SmartPost VALUES(256,'Pakettiautomaatti, K-supermarket Manhattan','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','22.2363981','60.4576422','Pitkämäenkatu 4','20255','TURKU');
+INSERT INTO SmartPost VALUES(257,'Pakettiautomaatti, Prisma Tampereentie','ma-la 8.00 - 21.00, su 10.00 - 21.00','22.2868396','60.4727068','Vanha Tampereentie 108','20305','TURKU');
+INSERT INTO SmartPost VALUES(258,'Smartpost, Lidl Länsikeskus','ma-la 08.00 - 21.00, su 11.00 - 19.00','22.2224505','60.4727539','Viilarinkatu 12','20324','TURKU');
+INSERT INTO SmartPost VALUES(259,'Smartpost, Tokmanni Länsikeskus','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 10.00 - 18.00','22.2249399','60.4727597','Viilarinkatu 8','20324','TURKU');
+INSERT INTO SmartPost VALUES(260,'Pakettiautomaatti, Prisma Länsikeskus Turku','ma-la 8.00 - 21.00, su 10.00 - 21.00','22.2256223','60.4732401','Viilarinkatu 3','20325','TURKU');
+INSERT INTO SmartPost VALUES(261,'Pakettiautomaatti, K-citymarket Länsikeskus','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 21.00','22.2305957','60.4721889','Markulantie 150','20325','TURKU');
+INSERT INTO SmartPost VALUES(262,'Pakettiautomaatti, K-supermarket Runosmäki','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','22.2727073','60.4835865','Korjasmäenkatu 1','20365','TURKU');
+INSERT INTO SmartPost VALUES(263,'Pakettiautomaatti, Turun yliopisto','ma-to 7.00-18.00, pe 7.00 - 16.15','22.2823721','60.4550001','Henrikinkatu 2','20505','TURKU');
+INSERT INTO SmartPost VALUES(264,'Pakettiautomaatti, Prisma Itäharju','ma-la 8.00 - 21.00, su 10.00 - 21.00','22.326668','60.4459955','Kalevantie 41','20525','TURKU');
+INSERT INTO SmartPost VALUES(265,'Pakettiautomaatti, K-citymarket Ravattula','ma-la 8.00 - 21.00, su 10.00 - 21.00','22.355343','60.469348','Reivikatu 5-7','20545','TURKU');
+INSERT INTO SmartPost VALUES(266,'Pakettiautomaatti, K-Supermarket Hannunniittu','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','22.3310508','60.4617668','Kuralankatu 2    ','20545','TURKU');
+INSERT INTO SmartPost VALUES(267,'Pakettiautomaatti, S-market Halinen','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.3068411','60.4693517','Gregorius IX:n tie 8','20545','TURKU');
+INSERT INTO SmartPost VALUES(268,'Pakettiautomaatti, K-Supermarket Annika','ma-pe 7.00-21.00, la 7.00-18.00, su 12.00-18.00','22.3583347','60.4433601','Annikanpolku 1','20615','TURKU');
+INSERT INTO SmartPost VALUES(269,'Pakettiautomaatti, K-citymarket Kupittaa','ma-la 8.00 - 22.00,  su 10.00 - 22.00','22.28675','60.4431345','Uudenmaantie 17','20705','TURKU');
+INSERT INTO SmartPost VALUES(270,'Smartpost, Tokmanni Skanssi','ma-pe 09.00-21.00, la 09.00-18.00, su 12.00-18.00','22.3216055','60.4300395','Skanssinkatu 10','20734','TURKU');
+INSERT INTO SmartPost VALUES(271,'Pakettiautomaatti, K-citymarket Skanssi','ma-la 8.00 - 21.00, su 10.00 - 21.00','22.3227706','60.4280545','Itäkaari 20','20735','TURKU');
+INSERT INTO SmartPost VALUES(272,'Pakettiautomaatti, S-market Kaarina','ma-la 7.00 - 22.00, su 10.00 - 22.00','22.3728983','60.408441','Kuskinkatu 4','20785','KAARINA');
+INSERT INTO SmartPost VALUES(273,'Pakettiautomaatti, Sale Laivurinkatu','ma-pe 7.00 - 23.00, la 8.00 - 23.00, su 12.00 - 23.00','22.2460973','60.4383143','Laivurinkatu 1','20815','TURKU');
+INSERT INTO SmartPost VALUES(274,'Pakettiautomaatti, S-market Majakkaranta','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.2400656','60.4309148','Kölikatu 2','20815','TURKU');
+INSERT INTO SmartPost VALUES(275,'Pakettiautomaatti, K-Supermarket Hirvensalo','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','22.228656','60.4186782','Vanha Kakskerrantie 1','20905','TURKU');
+INSERT INTO SmartPost VALUES(276,'Pakettiautomaatti, S-market Naantali','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.0298192','60.4674307','Tuulensuunkatu 12','21105','NAANTALI');
+INSERT INTO SmartPost VALUES(277,'Pakettiautomaatti, K-Supermarket Ukko-Pekka','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','22.0426551','60.4768879','Venekuja 5','21105','NAANTALI');
+INSERT INTO SmartPost VALUES(278,'Smartpost, K-supermarket Raisio Center','ma - su 7.00 - 22.00','22.170289','60.4902238','Voudinkatu 5','21204','RAISIO');
+INSERT INTO SmartPost VALUES(279,'Pakettiautomaatti, ABC Raisio','24h','22.1605075','60.5061109','Piilipuunkatu 2','21205','RAISIO');
+INSERT INTO SmartPost VALUES(280,'Pakettiautomaatti, S-market Raisio','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.1664727','60.4859674','Raisiontori 5','21205','RAISIO');
+INSERT INTO SmartPost VALUES(281,'Smartpost, Askaisten Ritaritupa Oy','ma-pe 06.00-21.00, la 09.00-21.00, su 10.00-18.00','21.8663572','60.5734538','Askaistentie 751','21244','ASKAINEN');
+INSERT INTO SmartPost VALUES(282,'Smartpost, Verkkokauppa.com Raisio','ma - pe 9.00 - 21.00, la 9.00 - 19.00, su 11.00 - 19.00','22.2089705','60.4894269','Kuloistentie 3','21284','RAISIO');
+INSERT INTO SmartPost VALUES(283,'Pakettiautomaatti, Kauppakeskus Mylly','ma-pe 10.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','22.2051776','60.491816','Myllynkatu 1','21285','RAISIO');
+INSERT INTO SmartPost VALUES(284,'Pakettiautomaatti, Sale Paattinen','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 10.00 - 18.00','22.3832904','60.592926','Seuravuorenkatu 2','21335','PAATTINEN');
+INSERT INTO SmartPost VALUES(285,'Pakettiautomaatti, S-market Lieto','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.4596149','60.5043412','Hanhenkaari 3','21425','LIETO');
+INSERT INTO SmartPost VALUES(286,'Pakettiautomaatti, S-market Paimio','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.6888769','60.4579403','Asematie 1','21535','PAIMIO');
+INSERT INTO SmartPost VALUES(287,'Smartpost, M-market Parainen','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 9.00 - 22.00','22.3015958','60.2976306','Rantatie 2','21604','PARAINEN');
+INSERT INTO SmartPost VALUES(288,'Pakettiautomaatti, S-market Parainen','ma-la 7.00 - 21.00, su 10.00 - 19.00','22.3022076','60.3074667','Vapparintie 3','21605','PARAINEN');
+INSERT INTO SmartPost VALUES(289,'Paketautomat, Postkontoret Mariehamn','ma-pe 6.00-20.00, la 7.00-14.00, su 13.00-17.00','19.938369','60.1001084','Nygatan 6','22105','MAARIANHAMINA');
+INSERT INTO SmartPost VALUES(290,'Paketautomat, Maxinge Jomala','ma-pe 8.00-21.00, la 9.00-18.00, su 10.00-18.00','19.9316288','60.1300814','Sparvägen 1','22155','JOMALA');
+INSERT INTO SmartPost VALUES(291,'SmartPost, K-supermarket Mynämäki','ma-la 7.00-21.00, su 10.00-21.00','21.9857962','60.678339','Keskuskatu 27','23104','MYNÄMÄKI');
+INSERT INTO SmartPost VALUES(292,'SmartPost, Lidl Uusikaupunki','ma - pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 19.00','21.4273463','60.8064312','Levysepänkatu 2','23504','UUSIKAUPUNKI');
+INSERT INTO SmartPost VALUES(293,'Pakettiautomaatti, K-supermarket Itäpoiju','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','21.4241794','60.804513','Ketunkalliontie 1','23505','UUSIKAUPUNKI');
+INSERT INTO SmartPost VALUES(294,'Smartpost, K-supermarket Laitila ','ma-la 07.00-21.00, su 10.00-20.00','21.6960474','60.8758935','Kauppakatu 3','23804','LAITILA');
+INSERT INTO SmartPost VALUES(295,'Pakettiautomaatti, S-market Laitila','ma-la 7.00 - 21.00, su 10.00 - 20.00','21.6965265','60.8758584','Kauppakatu 8','23805','LAITILA');
+INSERT INTO SmartPost VALUES(296,'Pakettiautomaatti, S-market Plaza','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','23.1247412','60.3863727','Vilhonkatu 8','24105','SALO');
+INSERT INTO SmartPost VALUES(297,'Pakettiautomaatti, K-citymarket Salo','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.1275116','60.3905795','Hämeentie 24-30','24245','SALO');
+INSERT INTO SmartPost VALUES(298,'Pakettiautomaatti, S-market Tupuri','ma-la 7.00 - 21.00, su 10.00 - 21.00','23.1773938','60.3969199','Kalkkimäenrinne 2','24285','SALO');
+INSERT INTO SmartPost VALUES(299,'Smartpost, Lidl Salo-Halikko','ma-la 8.00 - 21.00, su 11.00 - 19.00','23.080584','60.396293','Halikontie 1','24804','HALIKKO');
+INSERT INTO SmartPost VALUES(300,'Pakettiautomaatti, Prisma Halikko','ma-la 8.00 - 21.00, su 10.00 - 21.00','23.0854861','60.3939486','Prismantie 2','24805','HALIKKO');
+INSERT INTO SmartPost VALUES(301,'Smartpost, K-Supermarket Kompass','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 10.00 - 20.00','22.7328532','60.1631216','Engelsbyntie 9','25704','KEMIÖ');
+INSERT INTO SmartPost VALUES(302,'Smartpost, Pick N Pay Rauma','ma - la 7.00 - 21.00, su 12.00 - 19.00','21.502804','61.1231462','Sahankatu 2','26104','RAUMA');
+INSERT INTO SmartPost VALUES(303,'Smartpost, Tokmanni Rauma','ma-pe 08.00-20.00, la 08.00-19.00, su 11.00-18.00','21.5217293','61.1339877','Kairakatu 2','26104','RAUMA');
+INSERT INTO SmartPost VALUES(304,'Pakettiautomaatti, S-market Äyhö','ma-la 8.00 - 21.00, su 11.00 - 18.00','21.5380022','61.1318','yhönjärventie 1','26105','RAUMA');
+INSERT INTO SmartPost VALUES(305,'Pakettiautomaatti, Prisma Rauma','ma-la 8.00 - 21.00, su 9.00 - 21.00','21.5347493','61.1327137','Porintie 4','26105','RAUMA');
+INSERT INTO SmartPost VALUES(306,'Pakettiautomaatti, K-citymarket Rauma','ma-la 8.00 - 21.00,  su 10.00 - 21.00','21.5074397','61.1323825','Karjalankatu 5','26105','RAUMA');
+INSERT INTO SmartPost VALUES(307,'Pakettiautomaatti, ABC Kortela','24h','21.5050368','61.1004442','Unajantie 2','26845','KORTELA');
+INSERT INTO SmartPost VALUES(308,'Smartpost, K-Market Kiukainen','ma-la 8.00 - 22.00, su 10.00 - 22.00','22.0839325','61.2064353','Eurakoskentie 45','27404','KIUKAINEN');
+INSERT INTO SmartPost VALUES(309,'Smartpost, K-market Otavankatu','ma-pe 7.00 - 24.00, la 8.00 - 24.00, su 9.00 - 24.00','21.7895809','61.4851439','Otavankatu 12','28104','PORI');
+INSERT INTO SmartPost VALUES(310,'Smartpost, Pick N Pay Pori','ma - la 7.00 - 21.00, su 12.00 - 19.00','21.8091022','61.4980664','Kolmiokatu 2','28104','PORI');
+INSERT INTO SmartPost VALUES(311,'Pakettiautomaatti, Sale Vapaudenkatu','ma-la 7.00 - 23.00, su 9.00 - 23.00','21.7843232','61.4886159','Vapaudenkatu 1','28105','PORI');
+INSERT INTO SmartPost VALUES(312,'Pakettiautomaatti, Sokos Satakunta','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 10.00 - 21.00','21.7982408','61.4838044','Liisankatu 2-4','28105','PORI');
+INSERT INTO SmartPost VALUES(313,'Pakettiautomaatti, Kauppakeskus Puuvilla','ma-la 8.00 - 21.00, su 10.00 - 21.00','21.8013602','61.4943238','Siltapuistokatu 14','28105','PORI');
+INSERT INTO SmartPost VALUES(314,'Pakettiautomaatti, K-citymarket Mikkola','ma-la 7.00 - 21.00,  su 10.00 - 21.00','21.8358675','61.4536203','Itäkeskuksenkaari 8','28135','PORI');
+INSERT INTO SmartPost VALUES(315,'Pakettiautomaatti, Prisma Mikkola','ma-la 7.00 - 21.00, su 10.00 - 21.00','21.8388842','61.4550824','Itäkeskuksenkaari 6','28135','PORI');
+INSERT INTO SmartPost VALUES(316,'Pakettiautomaatti, K-supermarket Ruokapori','ma-pe 7.20 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','21.8222688','61.4750522','Vanhakoivistontie 10','28365','PORI');
+INSERT INTO SmartPost VALUES(317,'Pakettiautomaatti, K-Supermarket Hansa ','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','21.8750531','61.4281842','Friitalantie 18','28405','ULVILA');
+INSERT INTO SmartPost VALUES(318,'Smartpost, Lidl Musa ','ma-la 8.00 - 21.00, su 11.00 - 19.00','21.7530379','61.475516','Eteläväylä 9 ','28614','PORI');
+INSERT INTO SmartPost VALUES(319,'Pakettiautomaatti, Sale Paratiisinmäki','ma-la 7.00 - 23.00, su 9.00 - 23.00','21.7287156','61.4778622','Yrttitie 1','28615','PORI');
+INSERT INTO SmartPost VALUES(320,'Pakettiautomaatti, Prisma Länsipori','ma-la 7.00 - 21.00, su 10.00 - 21.00','21.75676','61.4787596','Eteläväylä 2','28615','PORI');
+INSERT INTO SmartPost VALUES(321,'Pakettiautomaatti, Sale Luvia II','ma-la 7.00 - 22.00, su 9.00 - 22.00','21.6223349','61.3602487','Lukkarilantie 1','29105','LUVIA');
+INSERT INTO SmartPost VALUES(322,'Pakettiautomaatti, S-market Harjavalta','ma-la 7.00 - 21.00, su 10.00 - 20.00','22.1346366','61.312383','Pirkankatu 5','29205','HARJAVALTA');
+INSERT INTO SmartPost VALUES(323,'Pakettiautomaatti, Prisma Forssa','ma-la 8.00 - 21.00, su 11.00 - 19.00','23.6370337','60.8121926','Tapulikuja 6','30105','FORSSA');
+INSERT INTO SmartPost VALUES(324,'Pakettiautomaatti, K-citymarket Forssa','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','23.629334','60.808492','Yhtiönkatu','30105','FORSSA');
+INSERT INTO SmartPost VALUES(325,'Pakettiautomaatti, S-market Forssa','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','23.6294245','60.8212683','Nikkilänkatu 4','30105','FORSSA');
+INSERT INTO SmartPost VALUES(326,'Smartpost, Tokmanni Forssa','ma-pe 08.00-21.00, la 08.00-19.00, su 10.00-18.00','23.6338402','60.8047871','Miemolantie 2','30304','FORSSA');
+INSERT INTO SmartPost VALUES(327,'Pakettiautomaatti, S-market Somero','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 10.00 - 20.00','23.5119965','60.6337938','Turuntie 6','31405','SOMERO');
+INSERT INTO SmartPost VALUES(328,'Smartpost, Lidl loimaa ','ma-pe 08.00 - 21.00, la 8.00 - 19.00, su 11.00 - 19.00','23.0354371','60.8541958','Kartanomäenkatu 4','32204','LOIMAA');
+INSERT INTO SmartPost VALUES(329,'Pakettiautomaatti, Prisma Loimaa','ma-la 8.00 - 21.00, su 10.00 - 19.00','23.0461074','60.8556655','Aleksis Kiven Katu 7','32205','LOIMAA');
+INSERT INTO SmartPost VALUES(330,'Pakettiautomaatti, K-citymarket Loimaa','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 12.00 - 18.00','23.0442103','60.8544689','Aleksis Kivenkatu 11','32205','LOIMAA');
+INSERT INTO SmartPost VALUES(331,'Smartpost, Tokmanni Huittinen','ma-pe 8.00 - 20.00, la 8.00 - 19.00, su 11.00 - 18.00','22.6799578','61.1719175','Kauppiaskatu','32704','HUITTINEN');
+INSERT INTO SmartPost VALUES(332,'Smartpost, K-supermarket Lautturi ','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','22.6977993','61.1781956','Särmänkatu 1','32704','HUITTINEN');
+INSERT INTO SmartPost VALUES(333,'Pakettiautomaatti, S-market Huittinen','ma-la 7.00 - 21.00, su 10.00 - 20.00','22.701849','61.1769372','Risto Rytin katu 37','32705','HUITTINEN');
+INSERT INTO SmartPost VALUES(334,'Pakettiautomaatti, S-market Kokemäki','ma-la 7.00 - 21.00, su 10.00 - 20.00','22.3488446','61.2555483','Haapionkatu 14','32805','KOKEMÄKI');
+INSERT INTO SmartPost VALUES(335,'Smartpost, Lidl Rautatienkatu ','ma-la 7.00 - 21.00, su 11.00 - 21.00','23.7720213','61.5000365','Rautatienkatu 21','33104','TAMPERE');
+INSERT INTO SmartPost VALUES(336,'Smartpost, Kauppakeskus Ratina','ma-la 7.00 - 21.00, su 10.00 - 21.00','23.7690849','61.4942462','Vuolteenkatu 1','33104','TAMPERE');
+INSERT INTO SmartPost VALUES(337,'Pakettiautomaatti, Koskikeskus Tampere','ma - pe 7.00 - 21.00, la 7.00 - 20.00, su 10.00 - 19.00','23.767257','61.496601','Hatanpään valtatie 1','33105','TAMPERE');
+INSERT INTO SmartPost VALUES(338,'Pakettiautomaatti, Tampereen yliopisto','ma-pe 7.00 - 17.00, la 08.00 - 15.00','23.7800531','61.4938038','Kalevantie 4','33105','TAMPERE');
+INSERT INTO SmartPost VALUES(339,'Pakettiautomaatti, Stockmann Tampere','ma-pe 9.00 - 20.00, la 9.00 - 19.00, su 11.00 - 18.00','23.7704828','61.4985184','Hämeenkatu 4','33105','TAMPERE');
+INSERT INTO SmartPost VALUES(340,'Pakettiautomaatti, S-market Pendoliino','ma-pe 6.00 - 23.00, la 7.00 - 23.00, su 10.00 - 23.00','23.7763654','61.4980324','Pakkahuoneenaukio 2','33105','TAMPERE');
+INSERT INTO SmartPost VALUES(341,'Smartpost, Sokos Tampere','ma-pe 9.00 - 21.00, la 9.00 - 19.00, su 11.00 - 18.00','23.7580406','61.4970081','Hämeenkatu 21','33204','TAMPERE');
+INSERT INTO SmartPost VALUES(342,'Pakettiautomaatti, Sale Amuri','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','23.7480102','61.4999856','Satakunnankatu 36','33215','TAMPERE');
+INSERT INTO SmartPost VALUES(343,'Pakettiautomaatti, Anttilan talo Tampere','ma-pe 8.00 - 21.00, la 9.00 - 21.00, su 11.00 - 18.00','23.7558082','61.4997321','Puutarhakatu 10','33215','TAMPERE');
+INSERT INTO SmartPost VALUES(344,'Pakettiautomaatti, K-Market Haapalinna','ma-pe 7.00 - 23.00, la 7.00 - 23.00, su 9.00 - 23.00','23.6868523','61.5083801','Pispalan valtatie 91','33275','TAMPERE');
+INSERT INTO SmartPost VALUES(345,'Pakettiautomaatti, K-supermarket Villilä','ma-pe 7.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.6235776','61.4955781','Ratakistonkatu 7','33305','TAMPERE');
+INSERT INTO SmartPost VALUES(346,'Pakettiautomaatti, K-supermarket Westeri','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.629424','61.5047618','Tesomankatu 4','33315','TAMPERE');
+INSERT INTO SmartPost VALUES(347,'Pakettiautomaatti, Prisma Lielahti','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.6556151','61.5210027','Turvesuonkatu 2','33405','TAMPERE');
+INSERT INTO SmartPost VALUES(348,'Pakettiautomaatti, ABC Teivo','ma-su 6.00 - 24.00','23.6338151','61.5319749','Hiitintie 1','33405','TAMPERE');
+INSERT INTO SmartPost VALUES(349,'Pakettiautomaatti, K-citymarket Lielahti','ma-la 8.00 - 21.00, su 11.00 - 20.00','23.6693856','61.5147013','Harjuntausta 7','33405','TAMPERE');
+INSERT INTO SmartPost VALUES(350,'Pakettiautomaatti, K-citymarket Ylöjärvi','ma-su 9.00 - 21.00','23.567136','61.5564203','Elotie 1','33475','YLÖJÄRVI');
+INSERT INTO SmartPost VALUES(351,'Pakettiautomaatti, K-supermarket Linkki','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','23.5946346','61.5487205','Mastontie 2','33475','YLÖJÄRVI');
+INSERT INTO SmartPost VALUES(352,'Pakettiautomaatti, S-market Ylöjärvi','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 11.00 - 21.00','23.5946904','61.5643499','Lähdevainiontie 1','33485','YLÖJÄRVI');
+INSERT INTO SmartPost VALUES(353,'Pakettiautomaatti, Prisma Kaleva Tampere','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.8210923','61.4902852','Sammonkatu 75','33545','TAMPERE');
+INSERT INTO SmartPost VALUES(354,'Pakettiautomaatti, Sale Leinola','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','23.9141747','61.4955733','Orimuskatu 71','33585','TAMPERE');
+INSERT INTO SmartPost VALUES(355,'Pakettiautomaatti, Prisma Linnainmaa','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.8834159','61.4951839','Liikekatu 3','33585','TAMPERE');
+INSERT INTO SmartPost VALUES(356,'Pakettiautomaatti, K-citymarket Linnainmaa','ma-la 8.00 - 21.00,  su 10.00 - 20.00','23.8879765','61.4964259','Mäentakusenkatu 1','33585','TAMPERE');
+INSERT INTO SmartPost VALUES(357,'Pakettiautomaatti, K-citymarket Turtola','ma-la 8.00 - 21.00,  su 10.00 - 21.00','23.8414525','61.4782104','Sotilaankatu 11','33715','TAMPERE');
+INSERT INTO SmartPost VALUES(358,'Pakettiautomaatti, S-market Kaukajärvi','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','23.8739401','61.4738868','Keskisenkatu 5','33715','TAMPERE');
+INSERT INTO SmartPost VALUES(359,'Pakettiautomaatti, Tampereen teknillinen yliopisto','ma-pe 7.30 - 17.00','23.8549184','61.4486314','Korkeakoulunkatu 1','33725','TAMPERE');
+INSERT INTO SmartPost VALUES(360,'Pakettiautomaatti, S-market Hervanta','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 21.00','23.8523764','61.4507734','Pietilänkatu 2','33725','TAMPERE');
+INSERT INTO SmartPost VALUES(361,'Pakettiautomaatti, K-Supermarket Nekala','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.7825189','61.4799158','Viinikankatu 40','33805','TAMPERE');
+INSERT INTO SmartPost VALUES(362,'Pakettiautomaatti, Prisma Koivistonkylä','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.7749514','61.4676611','Lempääläntie 21','33825','TAMPERE');
+INSERT INTO SmartPost VALUES(363,'Smartpost, K-market Vuores','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 9.00 - 22.00','23.8123982','61.431131','Kokinpellonrinne 2','33874','TAMPERE');
+INSERT INTO SmartPost VALUES(364,'Pakettiautomaatti, Sale Vuores','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','23.8088162','61.4323111','Vuoreksen Puistokatu 87','33875','TAMPERE');
+INSERT INTO SmartPost VALUES(365,'Pakettiautomaatti, Sale Hatanpää','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','23.7651088','61.4836741','Hatanpään puistokuja 29','33905','TAMPERE');
+INSERT INTO SmartPost VALUES(366,'Smartpost, S-market Pirkkala ','ma-la 8.00 - 22.00, su 10.00 - 22.00','23.7161172','61.468803','Kenkätie 4','33954','PIRKKALA');
+INSERT INTO SmartPost VALUES(367,'Smartpost, Tokmanni Partola','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','23.7223665','61.4644712','Palmrothintie 1-3','33954','PIRKKALA');
+INSERT INTO SmartPost VALUES(368,'Smartpost, Verkkokauppa.com Pirkkala','ma-la 9.00 - 21.00, su 12.00 - 18.00','23.7192984','61.4669548','Saapastie 2','33954','PIRKKALA');
+INSERT INTO SmartPost VALUES(369,'Pakettiautomaatti, K-citymarket Partola','ma-la 9.00 - 21.00,  su 11.00 - 20.00','23.7213674','61.4648739','Palmrothintie 2','33955','PIRKKALA');
+INSERT INTO SmartPost VALUES(370,'Pakettiautomaatti, ABC Pirkkala','24h','23.6418823','61.4529187','Keisarinviitta 2','33965','PIRKKALA');
+INSERT INTO SmartPost VALUES(371,'Pakettiautomaatti, S-market Virrat','ma-la 7.00 - 21.00, su 11.00 - 20.00','23.7806571','62.2405223','Pääskyntie 13','34805','VIRRAT');
+INSERT INTO SmartPost VALUES(372,'Pakettiautomaatti, S-market Orivesi','ma-la 7.00 - 21.00, su 10.00 - 21.00','24.3576405','61.6784568','Keskustie 36','35305','ORIVESI');
+INSERT INTO SmartPost VALUES(373,'Pakettiautomaatti, S-market Mänttä','ma-la 8.00 - 21.00, su 11.00 - 20.00','24.6227464','62.0293057','Hallituskatu 25','35805','MÄNTTÄ');
+INSERT INTO SmartPost VALUES(374,'Pakettiautomaatti, S-market Kangasala','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 21.00','24.0378656','61.4687566','Puusepäntie 31','36205','KANGASALA');
+INSERT INTO SmartPost VALUES(375,'Smartpost, Tokmanni Kangasala','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 18.00','24.0138041','61.4720155','Mäkirinteentie 4','36224','KANGASALA');
+INSERT INTO SmartPost VALUES(376,'Pakettiautomaatti, Prisma Kangasala','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.9805667','61.4752263','Mäkirinteentie 10','36225','KANGASALA');
+INSERT INTO SmartPost VALUES(377,'Pakettiautomaatti, Prisma Nokia','ma-la 8.00 - 22.00, su 10.00 - 22.00','23.5127944','61.4786414','Yrittäjäkatu 10','37105','NOKIA');
+INSERT INTO SmartPost VALUES(378,'Smartpost, Tokmanni Vihola','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 18.00','23.5119395','61.4682097','Nuijamiestentie 9','37124','NOKIA');
+INSERT INTO SmartPost VALUES(379,'Pakettiautomaatti, K-citymarket Nokia','ma-la 9.00 - 21.00,  su 10.00 - 19.00','23.5088247','61.4676302','Nuijamiestentie 5','37125','NOKIA');
+INSERT INTO SmartPost VALUES(380,'Pakettiautomaatti, S-market Myllyhaka','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.4937425','61.4880658','Pinsiöntie 23','37135','NOKIA');
+INSERT INTO SmartPost VALUES(381,'Smartpost, K-Market Harjuniitty','ma-pe 7.00 - 21.30, la 8.00 - 21.00, su 10.00 - 21.00','23.4642789','61.4723035','Sipiläntie 2','37144','NOKIA');
+INSERT INTO SmartPost VALUES(382,'Pakettiautomaatti, ABC Kolmenkulma','24h','23.5681629','61.501509','Rounionkatu 140','37155','NOKIA');
+INSERT INTO SmartPost VALUES(383,'Pakettiautomaatti, S-market Lempäälä','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.7530882','61.3127204','Puistokatu 4','37505','LEMPÄÄLÄ');
+INSERT INTO SmartPost VALUES(384,'Pakettiautomaatti, K-Supermarket Kuljun kartano','ma-su 9.00 - 21.00','23.7795627','61.3805519','Tampereentie 272','37565','LEMPÄÄLÄ');
+INSERT INTO SmartPost VALUES(385,'Pakettiautomaatti, Kauppakeskus Ideapark','ma-pe 9.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','23.7985403','61.3623382','Ideaparkinkatu 4','37575','LEMPÄÄLÄ');
+INSERT INTO SmartPost VALUES(386,'Smartpost, K-Citymarket Valkeakoski','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 18.00','24.0317058','61.2673733','Hakalantie 1','37604','VALKEAKOSKI');
+INSERT INTO SmartPost VALUES(387,'Pakettiautomaatti, K-market Apiankatu ','ma- pe 07.00 - 22.00, la 08.00 - 22.00, su 10.00 - 22.00','24.0333042','61.2637488','Apiankatu 2','37605','VALKEAKOSKI');
+INSERT INTO SmartPost VALUES(388,'Pakettiautomaatti, S-market Valkeakoski','ma-pe 8.00 - 22.00, la 8.00 - 21.00, su 11.00 - 20.00','24.0277359','61.266277','Valtakatu 11','37605','VALKEAKOSKI');
+INSERT INTO SmartPost VALUES(389,'SmartPost, K-Market Pepperoni','ma - la 8.00 - 21.00, su 10.00 - 21.00','24.015408','61.2777992','Lempääläntie 39','37634','VALKEAKOSKI');
+INSERT INTO SmartPost VALUES(390,'Pakettiautomaatti, ABC Toijala','24h','23.9060827','61.1913218','Satamatie 43','37805','AKAA');
+INSERT INTO SmartPost VALUES(391,'Pakettiautomaatti, S-market Toijala','ma-pe 7.00 - 22.00, la 8.00 - 21.00, su 11.00 - 20.00','23.8671105','61.1680173','Valtatie 1','37805','AKAA');
+INSERT INTO SmartPost VALUES(392,'Pakettiautomaatti, S-market Viiala','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','23.7678403','61.2105919','Keskuskatu 47','37835','AKAA');
+INSERT INTO SmartPost VALUES(393,'Pakettiautomaatti, Tokmanni Kylmäkoski','ma-su 8.00 - 21.00','23.692753','61.1607001','Yrittäjätie 4','37915','AKAA');
+INSERT INTO SmartPost VALUES(394,'Pakettiautomaatti, S-market Sastamala','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 11.00 - 20.00','22.9191729','61.3368622','Itsenäisyydentie 1','38205','SASTAMALA');
+INSERT INTO SmartPost VALUES(395,'Pakettiautomaatti, K-citymarket Sastamala','ma - pe 7.00 - 21.00, la 7.00 - 21.00, su 10.00 - 20.00','22.9216235','61.3218954','Itsenäisyydentie 66','38205','SASTAMALA');
+INSERT INTO SmartPost VALUES(396,'Pakettiautomaatti, K-citymarket Kankaanpää','ma-pe 7.00 - 21.00, la 7.00 - 21.00, su 10.00 - 18.00','22.3890723','61.8067661','Keskuskatu 39','38705','KANKAANPÄÄ');
+INSERT INTO SmartPost VALUES(397,'Smartpost, S-market Hämeenkyrö','ma - pe 7.00 - 21.00, la 8.00 - 21.00, su 10.00 - 21.00','23.1960702','61.6392236','Härkikuja 4','39104','HÄMEENKYRÖ');
+INSERT INTO SmartPost VALUES(398,'Pakettiautomaatti, S-market Ikaalinen','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 11.00 - 20.00','23.0715131','61.7621158','Teollisuustalontie 2','39505','IKAALINEN');
+INSERT INTO SmartPost VALUES(399,'Pakettiautomaatti, S-market Parkano','ma-pe 7.00 - 21.00, la 8.00 - 21.00, su 11.00 - 20.00','23.0102114','62.0073088','Humalankatu 1','39705','PARKANO');
+INSERT INTO SmartPost VALUES(400,'Pakettiautomaatti, Kauppakeskus Forum','ma-pe 9.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','25.7475243','62.2424487','Asemakatu 7','40105','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(401,'Pakettiautomaatti, K-supermarket Lutakko','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.7546887','62.2384974','Lutakonaukio 1','40105','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(402,'Pakettiautomaatti, S-market Kolmikulma','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.7505818','62.2444748','Puistokatu 2','40105','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(403,'Smartpost, Lidl Palokka ','ma-la 08.00 - 21.00, su 11.00 - 21.00','25.7160857','62.2945855','Saarijärventie 63','40274','PALOKKA');
+INSERT INTO SmartPost VALUES(404,'Pakettiautomaatti, K-citymarket Palokka','ma-pe 08.00 - 21.00, la 08.00 - 21.00, su 10.00 - 20.00','25.7150236','62.2878431','Saarijärventie 52','40275','PALOKKA');
+INSERT INTO SmartPost VALUES(405,'Smartpost, Lidl Seppälä','ma-la 08.00 - 21.00, su 11.00 - 21.00','25.7723852','62.2548132','Vasarakatu 4','40324','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(406,'Pakettiautomaatti, Prisma Seppälä','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.7773469','62.2578059','Ahjokatu 7','40325','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(407,'Pakettiautomaatti, K-citymarket Seppälä','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','25.7773206','62.264134','Vasarakatu 29','40325','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(408,'Pakettiautomaatti Minimani Jyväskylä','ma - pe 8.00 - 22.00, la 8.00 - 21.00, su 10.00 - 21.00','25.7640393','62.2540824','Vapaaherrantie 11','40325','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(409,'Pakettiautomaatti, Sale Huhtasuo','ma-la 7.00 - 23.00, su 9.00 - 23.00 ','25.800148','62.2713521','Nevakatu 1','40345','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(410,'Pakettiautomaatti, K-citymarket Keljo','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','25.7187597','62.215442','Kylmälahdentie 6','40505','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(411,'Pakettiautomaatti, Prisma Keljo','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.7197169','62.2176341','Kylmälahdentie 8','40505','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(412,'Smartpost, K-market Äijälä','ma-pe 7.00 - 22.00, la 8.00 - 22.00, su 10.00 - 22.00','25.8096971','62.2323932','Tahvosentie 1','40524','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(413,'Pakettiautomaatti, S-market Kuokkala','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.7733703','62.2276882','Syöttäjänkatu 2','40525','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(414,'Pakettiautomaatti, S-market Savela','ma-la 7.00 - 23.00, su 10.00 - 23.00','25.7107585','62.2430626','Vehkakatu 5','40705','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(415,'Pakettiautomaatti, K-supermarket Länsiväylä','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','25.7137595','62.2435203','Kaivokatu 1','40705','JYVÄSKYLÄ');
+INSERT INTO SmartPost VALUES(416,'Pakettiautomaatti, S-market Vaajala','ma-la 7.00 - 22.00, su 10.00 - 22.00','25.8773198','62.2485157','Asematie 1','40805','VAAJAKOSKI');
+INSERT INTO SmartPost VALUES(417,'Pakettiautomaatti, S-market Säynätsalo','ma-la 7.00 - 21.00, su 10.00 - 21.00','25.769686','62.1387872','Parviaisentie 6','40905','SÄYNÄTSALO');
+INSERT INTO SmartPost VALUES(418,'Smartpost, K-Market Kinkomaa','ma-pe 9.00 - 21.00, la 10.00 - 21.00, su 10.00 - 18.00','25.7472567','62.2426034','Liikekuja 4','40934','KINKOMAA');
+INSERT INTO SmartPost VALUES(419,'Smartpost, Lidl Muuramekeskus ','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 19.00','25.6735053','62.1364035','Setäläntie 3 B','40954','MUURAME');
+INSERT INTO SmartPost VALUES(420,'Pakettiautomaatti, S-market Muurame','ma-la 7.00 - 22.00, su 10.00 - 22.00','25.6732776','62.129397','Virastotie 5','40955','MUURAME');
+INSERT INTO SmartPost VALUES(421,'Pakettiautomaatti, K-citymarket Jämsä','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','25.2006291','61.8665156','Keskuskatu 23','42105','JÄMSÄ');
+INSERT INTO SmartPost VALUES(422,'Pakettiautomaatti, S-market Keuruu','ma-la 7.00 - 22.00, su 10.00 - 22.00','24.708371','62.258107','Keuruuntie 9','42705','KEURUU');
+INSERT INTO SmartPost VALUES(423,'Pakettiautomaatti, S-market Saarijärvi','ma-la 7.00 - 22.00, su 10.00 - 22.00','25.2604397','62.7049494','Kauppakatu 2','43105','SAARIJÄRVI');
+INSERT INTO SmartPost VALUES(424,'Pakettiautomaatti, S-market Äänekoski','ma-la 7.00 - 22.00, su 10.00 - 22.00','25.724778','62.6012838','Matkakatu 2','44105','ÄÄNEKOSKI');
+INSERT INTO SmartPost VALUES(425,'Pakettiautomaatti, K-citymarket Äänekoski','ma-la 08.00 - 21.00,  su 10.00 - 20.00','25.7248467','62.6028679','Työskintie 3-5','44105','NEKOSKI');
+INSERT INTO SmartPost VALUES(426,'Pakettiautomaatti, S-market Viitasaari','ma-la 7.00 - 21.00, su 10.00 - 21.00','25.8626503','63.0763551','Pappilantie 14','44505','VIITASAARI');
+INSERT INTO SmartPost VALUES(427,'Smartpost, MeiJän Kauppa ','ma, ke, to 9.00 - 18.00, ti, pe 9.00 - 20.00, la 9.00 - 17.00, su 12.00 - 16.00','25.2430694','63.5439724','Reisjärventie 2852','44884','MUURASJÄRVI');
+INSERT INTO SmartPost VALUES(428,'SmartPost, Kauppakeskus Valtari','ma-pe 7.00 - 21.00, la 9.00 - 19.00','26.7072934','60.8679684','Kouvolankatu 15','45104','KOUVOLA');
+INSERT INTO SmartPost VALUES(429,'Pakettiautomaatti, Kauppakeskus Hansa','ma - pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.7017283','60.8692759','Torikatu 3','45105','KOUVOLA');
+INSERT INTO SmartPost VALUES(430,'Pakettiautomaatti, Prisma Kouvola','ma-la 8.00 - 21.00, su 12.00 - 20.00','26.658883','60.871441','Tommolankatu 9','45135','KOUVOLA');
+INSERT INTO SmartPost VALUES(431,'Smartpost, Sale Eskolanmäki','ma-la 7.00 - 22.00 , su 10.00 - 22.00','26.7084861','60.8516609','Tasankotie 11','45154','KOUVOLA');
+INSERT INTO SmartPost VALUES(432,'Pakettiautomaatti, S-market Lehtomäki','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.7258314','60.8877366','Madekuja 3','45165','KOUVOLA');
+INSERT INTO SmartPost VALUES(433,'Pakettiautomaatti, S-market Jokela, Valkeala','ma-pe 7.00 - 21.00, la 7.00 - 21.00, su 12.00 - 21.00','26.7640268','60.9121562','Kauniskankaantie 2','45365','VALKEALA');
+INSERT INTO SmartPost VALUES(434,'Pakettiautomaatti, ABC Koria','24h','26.5681644','60.8590049','Suviojantie 19','45615','KORIA');
+INSERT INTO SmartPost VALUES(435,'Smartpost, K-Market Kuusankoski','ma - pe 7.00 - 21.00, la 8.00 - 20.00, su 10.00 - 20.00','26.6284635','60.901717','Väkevänkuja 1','45704','KUUSANKOSKI');
+INSERT INTO SmartPost VALUES(436,'Pakettiautomaatti, S-market Kuusankoski','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.6208458','60.9065769','Valtakatu 44','45705','KUUSANKOSKI');
+INSERT INTO SmartPost VALUES(437,'Pakettiautomaatti, Kauppakeskus Veturi','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','26.7041295','60.867886','Tervasharjunkatu 1','45725','KUUSANKOSKI');
+INSERT INTO SmartPost VALUES(438,'Pakettiautomaatti, S-market Myllykoski','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.7865289','60.7662134','Karjalantie 3','46805','MYLLYKOSKI');
+INSERT INTO SmartPost VALUES(439,'Pakettiautomaatti, S-market Elimäki','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.447287','60.7217198','Vanhamaantie 16','47205','ELIMÄKI');
+INSERT INTO SmartPost VALUES(440,'Pakettiautomaatti, S-market Kausala','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.3405418','60.8886712','Kauppakatu 13','47405','KAUSALA');
+INSERT INTO SmartPost VALUES(441,'Pakettiautomaatti, Kauppakeskus Pasaati','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.9442179','60.4666252','Keskuskatu 10','48105','KOTKA');
+INSERT INTO SmartPost VALUES(442,'Pakettiautomaatti, K-supermarket Pooki','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','26.9395743','60.4602316','Koulukatu 6','48105','KOTKA');
+INSERT INTO SmartPost VALUES(443,'Pakettiautomaatti, Prisma Kotka','ma-la 8.00 - 21.00, su 12.00 - 20.00','26.8690777','60.5009793','Hakamäentie 1','48405','KOTKA');
+INSERT INTO SmartPost VALUES(444,'Smartpost, Lidl Kotka','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 19.00','26.9362137','60.5133673','Karhukuja 4','48604','KOTKA');
+INSERT INTO SmartPost VALUES(445,'Pakettiautomaatti, K-citymarket Kotka','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 20.00','26.9137217','60.5056082','Jumalniementie 8','48605','KOTKA');
+INSERT INTO SmartPost VALUES(446,'Pakettiautomaatti, ABC Majakka Pyhtää','ma-su 6.00 - 24.00','26.555113','60.4906888','Pyhtääntie 38-40','49275','PYHTÄÄ');
+INSERT INTO SmartPost VALUES(447,'Pakettiautomaatti, K-supermarket Kanuuna','ma-pe 7.00 - 21.00, la 7.00 - 21.00, su 11.00 - 21.00','27.1886794','60.5680666','Sibeliuskatu 27','49405','HAMINA');
+INSERT INTO SmartPost VALUES(448,'Pakettiautomaatti, S-ostoskeskus Hamina','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','27.1941984','60.5689436','Isoympyräkatu 15','49405','HAMINA');
+INSERT INTO SmartPost VALUES(449,'Pakettiautomaatti, Tokmanni Mikkeli','ma-pe 7.00 - 22.00, la 8.00 - 21.00, su 12.00 - 18.00','27.2693585','61.6801035','Setrikatu 1','50105','MIKKELI');
+INSERT INTO SmartPost VALUES(450,'Pakettiautomaatti, Kauppakeskus Stella','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 22.00','27.2726329','61.6888374','Maaherrankatu 13','50105','MIKKELI');
+INSERT INTO SmartPost VALUES(451,'Pakettiautomaatti, K-Supermarket Rokkala','ma-pe 7.30 - 21.00, la 8.00 - 20.00, su 10.00 - 20.00','27.282424','61.7008469','Porrassalmenkatu 67','50105','MIKKELI');
+INSERT INTO SmartPost VALUES(452,'Pakettiautomaatti, K-citymarket Graani','ma-pe 7.00 - 22.00, la 8.00 - 21.00, su 10.00 - 21.00','27.2997764','61.6866338','Graanintie 1','50195','MIKKELI');
+INSERT INTO SmartPost VALUES(453,'Smartpost, Lidl Karikko','ma-la 08.00 - 21.00, su 11.00 - 20.00','27.2186242','61.6801335','Karikontie 5','50604','MIKKELI');
+INSERT INTO SmartPost VALUES(454,'Pakettiautomaatti, S-market Kangasniemi','ma-la 7.00 - 21.00, su 10.00 - 21.00','26.642331','61.9881278','Otto Mannisen tie 10','51205','KANGASNIEMI');
+INSERT INTO SmartPost VALUES(455,'Pakettiautomaatti, S-market Juva','ma-la 7.00 - 21.00, su 10.00 - 18.00','27.8586366','61.8969415','Juvantie 12','51905','JUVA');
+INSERT INTO SmartPost VALUES(456,'Pakettiautomaatti, S-market Mäntyharju','ma-la 7.00 - 21.00, su 11.00 - 18.00','26.8804582','61.415508','Pentinpolku 2','52705','MÄNTYHARJU');
+INSERT INTO SmartPost VALUES(457,'Pakettiautomaatti, K-supermarket Iso-Kristiina','ma-pe 7.00 - 21.00, la 7.00 - 19.00, su 12.00 - 20.00','28.1932329','61.0568174','Brahenkatu 5','53105','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(458,'Pakettiautomaatti, K-supermarket Lehmus','ma-la 08.00 - 21.00, su 10.00 - 21.00','28.2349666','61.061349','Standertskjöldinkatu 6','53205','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(459,'Pakettiautomaatti, S-market Lauritsala','ma-la 7.00 - 21.00, su 10.00 - 21.00','28.2609002','61.0697682','Itsenäisyydenkatu 19','53305','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(460,'Pakettiautomaatti, K-citymarket Lappeenranta','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','28.2002369','61.045288','Toikansuontie 4','53505','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(461,'Smartpost, Lidl Leiri','ma-la 08.00 - 21.00, su 10.00 - 20.00','28.175516','61.0493681','Puhakankatu 1','53604','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(462,'Pakettiautomaatti, Prisma Lappeenranta','ma-la 8.00 - 22.00, su 11.00 - 20.00','28.1782999','61.0512379','Puhakankatu 9-11','53605','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(463,'Pakettiautomaatti, Lappeenrannan teknillinen yliopisto','ma-pe 9.00 - 17.00','28.093246','61.0645679','Skinnarilankatu 34','53855','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(464,'Pakettiautomaatti, S-market Sammonlahti','ma-la 7.00 - 21.00, su 10.00 - 21.00','28.1054311','61.0522258','Orioninkatu 2','53855','LAPPEENRANTA');
+INSERT INTO SmartPost VALUES(465,'Pakettiautomaatti, S-market Joutseno','ma-la 7.00 - 21.00, su 10.00 - 21.00','28.5039276','61.1189216','Keskuskatu 3','54105','JOUTSENO');
+INSERT INTO SmartPost VALUES(466,'Pakettiautomaatti, S-market Taavetti','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 10.00 - 20.00','27.5680324','60.9222964','Linnalantie 42','54505','TAAVETTI');
+INSERT INTO SmartPost VALUES(467,'Pakettiautomaatti, S-market Imatrankoski','ma-pe 7.00 - 21.00, la 7.00 - 20.00, su 11.00 - 20.00','28.7657138','61.1702437','Olavinkatu 8','55105','IMATRA');
+INSERT INTO SmartPost VALUES(468,'Pakettiautomaatti, Prisma Imatra','ma-la 8.00 - 22.00, su 11.00 - 20.00','28.7636834','61.1882233','Karhumäenkatu 1','55125','IMATRA');
+INSERT INTO SmartPost VALUES(469,'Pakettiautomaatti, K-citymarket Imatra','ma-la 8.00 - 21.00, su 12.00 - 21.00','28.771577','61.1882003','Tietäjänkatu 2','55125','IMATRA');
+INSERT INTO SmartPost VALUES(470,'Pakettiautomaatti, S-market Rajapatsas','ma-pe 7.00 - 21.00, la 7.00 - 19.00, su 11.00 - 19.00','28.8025118','61.1625961','Ensontie 43','55615','IMATRA');
+INSERT INTO SmartPost VALUES(471,'Smartpost, K-Supermarket Vuoksenniska','ma - la 7.00 - 21.00, su 10.00 - 20.00','28.8356031','61.2247143','Torikatu 8','55804','IMATRA');
+INSERT INTO SmartPost VALUES(472,'Pakettiautomaatti, K-citymarket Savonlinna','ma-la 8.00 - 21.00,  su 10.00 - 21.00','28.8682688','61.8683894','Tulliportinkatu 10','57105','SAVONLINNA');
+INSERT INTO SmartPost VALUES(473,'Smartpost, Tokmanni Savonlinna','ma - pe 8.00 - 20.00, la 8.00 - 19.00, su 10.00 - 18.00','28.956378','61.8727891','Kartanonväylä 3','57214','SAVONLINNA');
+INSERT INTO SmartPost VALUES(474,'Pakettiautomaatti, Prisma Savonlinna','ma-la 8.00 - 22.00, su 10.00 - 21.00','28.9499316','61.8756706','Nojanmaantie 15','57215','SAVONLINNA');
+INSERT INTO SmartPost VALUES(475,'Smartpost, Lidl Länsitähti','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 19.00','28.8300318','61.8775383','Laivamiehentie 5','57514','SAVONLINNA');
+INSERT INTO SmartPost VALUES(476,'Pakettiautomaatti, K-Supermarket Seinäjoki','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','22.8345047','62.7917496','Puskantie 13','60105','SEINÄJOKI');
+INSERT INTO SmartPost VALUES(477,'Pakettiautomaatti  Minimani Seinäjoki ','ma - pe 8.00 - 22.00, la 8.00 - 21.00, su 10.00 - 21.00','22.8807133','62.7894162','Tehtaantie 5','60105','SEINÄJOKI');
+INSERT INTO SmartPost VALUES(478,'Smartpost, Tokmanni Seinäjoki','ma-la 8.00 - 21.00, su 10.00 - 18.00','22.8562661','62.7949972','Pohjan akka 5','60124','SEINÄJOKI');
+INSERT INTO SmartPost VALUES(479,'Pakettiautomaatti, K-citymarket Päivölä','ma-pe 9.00 - 22.00, la 9.00 - 20.00, su 11.00 - 20.00','22.8720546','62.7928943','Päivölänkatu 40','60125','SEINÄJOKI');
+INSERT INTO SmartPost VALUES(480,'Pakettiautomaatti, K-citymarket Jouppi','ma - pe 9.00 -22.00, la 8.00 - 20.00, su 11.00 - 20.00','22.8115569','62.7926244','Suupohjantie 45','60325','SEINÄJOKI');
+INSERT INTO SmartPost VALUES(481,'Pakettiautomaatti, Prisma Hyllykallio','ma-la 8.00 - 22.00, su 10.00 - 20.00','22.8785614','62.8068595','Hyllykalliontie 2','60515','HYLLYKALLIO');
+INSERT INTO SmartPost VALUES(482,'Pakettiautomaatti, S-market Kurikka','ma-la 7.00 - 22.00, su 11.00 - 20.00','22.398008','62.6176324','Asematie 6','61305','KURIKKA');
+INSERT INTO SmartPost VALUES(483,'Pakettiautomaatti, S-market Jalasjärvi','ma-la 7.00 - 21.00, su 11.00 - 18.00','22.7617401','62.489328','Keskustie 27','61605','JALASJÄRVI');
+INSERT INTO SmartPost VALUES(484,'Pakettiautomaatti, K-citymarket Kauhajoki','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 20.00','22.1773825','62.4277991','Puistotie 70','61805','KAUHAJOKI');
+INSERT INTO SmartPost VALUES(485,'Pakettiautomaatti, S-market Kauhajoki','ma-la 7.00 - 22.00, su 11.00 - 20.00','22.1832771','62.4335716','Topeeka 65','61805','KAUHAJOKI');
+INSERT INTO SmartPost VALUES(486,'Smartpost, Tokmanni Lapua','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 18.00','23.025977','62.977577','Alangontie 4','62104','LAPUA');
+INSERT INTO SmartPost VALUES(487,'Pakettiautomaatti, S-market Lapua','ma-la 7.00 - 22.00, su 11.00 - 20.00','23.0224889','62.9737123','Latojantie 9','62105','LAPUA');
+INSERT INTO SmartPost VALUES(488,'Pakettiautomaatti, S-market Kauhava','ma-la 7.00 - 22.00, su 11.00 - 20.00','23.0395904','63.0982603','Kauppatie 65','62205','KAUHAVA');
+INSERT INTO SmartPost VALUES(489,'Pakettiautomaatti, S-market Alavus','ma-la 7.00 - 21.00, su 11.00 - 18.00','23.6086052','62.5959386','Piirantie 1','63305','ALAVUS');
+INSERT INTO SmartPost VALUES(490,'Pakettiautomaatti, S-market Ähtäri','ma-la 7.00 - 21.00, su 11.00 - 18.00','24.0836044','62.5499255','Alatie 22','63705','ÄHTÄRI');
+INSERT INTO SmartPost VALUES(491,'Pakettiautomaatti, S-market Teuva','ma-la 7.00 - 21.00, su 11.00 - 18.00','21.739567','62.4872004','Mikkiläntie 12','64705','TEUVA');
+INSERT INTO SmartPost VALUES(492,'Smartpost, Kauppakeskus Rewell Center','ma-su 8.00 - 21.00','21.6148025','63.0957442','Ylätori 2b','65104','VAASA');
+INSERT INTO SmartPost VALUES(493,'Smartpost, Lidl Keskusta ','ma-la 08.00-21.00, su 11.00-20.00','21.6268673','63.0981828','Sepänkyläntie 4','65104','VAASA');
+INSERT INTO SmartPost VALUES(494,'Pakettiautomaatti, K-supermarket Wasa','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','21.629295','63.0918019','Klemetinkatu 17','65105','VAASA');
+INSERT INTO SmartPost VALUES(495,'Pakettiautomaatti, Minimani Vaasa','ma-pe 8.00 - 22.00, la 8.00 - 21.00, su 10.00 - 21.00','21.6241074','63.1032186','Laivakatu 13','65105','VAASA');
+INSERT INTO SmartPost VALUES(496,'Pakettiautomaatti, S-market Gerby','ma-la 7.00 - 21.00, su 12.00 - 18.00','21.6023388','63.1305484','Västervikintie 2','65285','VAASA');
+INSERT INTO SmartPost VALUES(497,'Smartpost, Tokmanni Vaasa','ma - la 8.00 - 21.00, su 10.00 - 18.00','21.6547852','63.1094604','Kokkokalliontie 8','65304','VAASA');
+INSERT INTO SmartPost VALUES(498,'Pakettiautomaatti, Prisma Vaasa','ma-la 8.00 - 22.00, su 10.00 - 21.00','21.6466661','63.1027912','Jukolantie 1','65305','VAASA');
+INSERT INTO SmartPost VALUES(499,'Pakettiautomaatti, K-citymarket Kivihaka','ma-la 9.00 - 22.00, su 10.00 - 21.00','21.6509893','63.1094883','Kokkokalliontie 2-6','65305','VAASA');
+INSERT INTO SmartPost VALUES(500,'Pakettiautomaatti, S-market Ristinummi','ma - pe 7.00 - 21.00, la 7.00 - 21.00, su 12.00 - 18.00','21.7263285','63.0858876','Vanhan Vaasan katu 19','65375','VAASA');
+INSERT INTO SmartPost VALUES(501,'Smartpost, S-market Sepänkylä','ma - la 7.00 - 21.00, su 11.00 - 19.00','21.705787','63.1212167','Karperöntie 1','65614','MUSTASAARI');
+INSERT INTO SmartPost VALUES(502,'Pakettiautomaatti, S-market Laihia','ma-la 7.00 - 21.00, su 10.00 - 21.00','22.0085909','62.979246','Kauppatie 6','66405','LAIHIA');
+INSERT INTO SmartPost VALUES(503,'Smartpost, S-market Vähäkyrö','ma-la 7.00 - 21.00, su 11.00 - 19.00','22.105807','63.0553742','Vähänkyröntie 1','66504','VÄHÄKYRÖ');
+INSERT INTO SmartPost VALUES(504,'SmartPost, K-supermarket Kokkola','ma-la 7.00 - 21.00, su 12.00 - 18.00','23.1426151','63.8361551','Rautatienkatu 10','67104','KOKKOLA');
+INSERT INTO SmartPost VALUES(505,'Pakettiautomaatti, Minimani Kokkola','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','23.1109351','63.8354873','Tehtaankatu 43','67105','KOKKOLA');
+INSERT INTO SmartPost VALUES(506,'Pakettiautomaatti, Sale Hakatori','ma-la 7.00 - 22.00, su 10.00 - 22.00','23.1372517','63.8388704','Torikatu 12','67105','KOKKOLA');
+INSERT INTO SmartPost VALUES(507,'Pakettiautomaatti, S-market Kallentori','ma-la 07.00 - 21.00, su 12.00 - 18.00','23.1419396','63.8374764','Pitkänsillankatu 15','67105','KOKKOLA');
+INSERT INTO SmartPost VALUES(508,'Smartpost, K-Market Merituuli','ma-la 7.00 - 21.00, su 10.00 - 21.00 ','23.1238469','63.8563723','Lasimestarintie 12','67304','KOKKOLA');
+INSERT INTO SmartPost VALUES(509,'Pakettiautomaatti, K-citymarket Kokkola','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 11.00 - 20.00','23.1493294','63.8303324','Heinolankaari 9','67605','KOKKOLA');
+INSERT INTO SmartPost VALUES(510,'Pakettiautomaatti, Prisma Kokkola','ma-la 8.00 - 22.00, su 10.00 - 21.00','23.1251595','63.8311649','Prismantie 1','67705','KOKKOLA');
+INSERT INTO SmartPost VALUES(511,'Pakettiautomaatti, Prisma Pietarsaari','ma-la 8.00 - 22.00, su 10.00 - 21.00','22.7168716','63.6773937','Koulukatu 4','68605','PIETARSAARI');
+INSERT INTO SmartPost VALUES(512,'Pakettiautomaatti, K-citymarket Pietarsaari','ma-la 8.00 - 21.00, su 11.00 - 21.00','22.7144775','63.6777428','Koulukatu 6','68605','PIETARSAARI');
+INSERT INTO SmartPost VALUES(513,'Pakettiautomaatti, ABC Pietarsaari','ma-su 6.00 - 24.00','22.712569','63.6742439','Autotie 2','68605','PIETARSAARI');
+INSERT INTO SmartPost VALUES(514,'Pakettiautomaatti, S-market Kaustinen','ma-la 7.00 - 21.00, su 12.00 - 18.00','23.6895153','63.5501005','Kauppatie','69605','KAUSTINEN');
+INSERT INTO SmartPost VALUES(515,'Pakettiautomaatti, Liikekeskus Puijonkatu','ma-pe 9.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','27.679751','62.892497','Puijonkatu 19 ','70105','KUOPIO');
+INSERT INTO SmartPost VALUES(516,'Pakettiautomaatti, Sokos Kuopio','ma-la 8.00 - 21.00, su 10.00 - 21.00','27.6765987','62.8926809','Haapaniemenkatu 24','70115','KUOPIO');
+INSERT INTO SmartPost VALUES(517,'Smartpost, Kys Puijon sairaala','24h','27.6468002','62.8975722','Puijonlaaksontie 2','70214','KUOPIO');
+INSERT INTO SmartPost VALUES(518,'Pakettiautomaatti, K-citymarket Päiväranta','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 21.00','27.6740786','62.9335317','Päivärannantie 18','70425','KUOPIO');
+INSERT INTO SmartPost VALUES(519,'Smartpost, Lidl Haapaniemi','ma-la 08.00 - 21.00, su 11.00 - 21.00','27.6669722','62.8807297','Tehdaskatu 12','70624','KUOPIO');
+INSERT INTO SmartPost VALUES(520,'Pakettiautomaatti, S-market Ykkösrasti','ma-la 7.00 - 22.00, su 10.00 - 21.00','27.6674505','62.880926','Tehdaskatu 19','70625','KUOPIO');
+INSERT INTO SmartPost VALUES(521,'Smartpost, Tokmanni Volttikatu','ma-pe 9.00 - 20.00, la 9.00 - 19.00, su 11.00 - 18.00','27.6284997','62.8833809','Volttikatu 4 ','70704','KUOPIO');
+INSERT INTO SmartPost VALUES(522,'Pakettiautomaatti, Prisma Kuopio','ma-la 8.00 - 23.00, su 10.00 - 21.00','27.6348637','62.8906027','Savilahdentie 10','70705','KUOPIO');
+INSERT INTO SmartPost VALUES(523,'Pakettiautomaatti, K-citymarket Kolmisoppi','ma-pe 8.00 - 21.00, la 8.00 - 21.00, su 10.00 - 21.00','27.6145766','62.86254','Kolmisopentie 1','70785','KUOPIO');
+INSERT INTO SmartPost VALUES(524,'Smartpost, Matkus Shopping Center','ma-pe 10.00 - 21.00, la 10.00 - 19.00, su 11.00 - 18.00','27.6046098','62.8236434','Matkuksentie 60','70804','KUOPIO');
+INSERT INTO SmartPost VALUES(525,'Pakettiautomaatti, ABC Pitkälahti','24h','27.6110061','62.8389168','Vitostie 1771','70805','KUOPIO');
+INSERT INTO SmartPost VALUES(526,'Smartpost, Lidl Petonen','ma-la 08.00 - 21.00, su 11.00 - 19.00','27.6473779','62.8400656','Petosentie 4','70824','KUOPIO');
+INSERT INTO SmartPost VALUES(527,'Pakettiautomaatti, K-Supermarket Petonen','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','27.6421831','62.8394529','Jalkasenkatu 5','70825','KUOPIO');
+INSERT INTO SmartPost VALUES(528,'Smartpost, Tokmanni Siilinjärvi','ma-pe 8.00 - 20.00, la 9.00 - 18.00, su 10.00 - 18.00','27.6601541','63.0735247','Kuiluntie 3','71804','SIILINJÄRVI');
+INSERT INTO SmartPost VALUES(529,'Pakettiautomaatti, K-Supermarket Herkkupata','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','27.6612885','63.0756152','Sorakuja 4','71805','SIILINJÄRVI');
+INSERT INTO SmartPost VALUES(530,'Pakettiautomaatti, S-market Lapinlahti','ma-la 7.00 - 21.00, su 10.00 - 21.00','27.3917984','63.3663658','Asematie 1','73105','LAPINLAHTI');
+INSERT INTO SmartPost VALUES(531,'Pakettiautomaatti, K-supermarket Torikulma','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','27.1896303','63.5562532','Satamakatu 10','74105','IISALMI');
+INSERT INTO SmartPost VALUES(532,'Pakettiautomaatti, Prisma Iisalmi','ma-la 8.00 - 21.00, su 10.00 - 21.00','27.1894589','63.5771347','Parkatintie 2','74125','IISALMI');
+INSERT INTO SmartPost VALUES(533,'Pakettiautomaatti, K-citymarket Iisalmi','ma-la 8.00 - 21.00, su 10.00 - 18.00','27.2288813','63.536761','Eteläntie 4','74135','IISALMI');
+INSERT INTO SmartPost VALUES(534,'Smartpost, K-supermarket Kiuruvesi','ma - pe 8.00 - 21.00, la 8.00 - 20.00, su 10.00 - 20.00','0','0','Asematie 10','74704','KIURUVESI');
+INSERT INTO SmartPost VALUES(535,'Pakettiautomaatti, Tokmanni Kiuruvesi','ma-pe 9.00 - 21.00, la 9.00 - 18.00, su 12.00 - 21.00','26.6091919','63.643309','Tulotie 10','74705','KIURUVESI');
+INSERT INTO SmartPost VALUES(536,'Pakettiautomaatti, S-market Kauppatori','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','29.1416021','63.5420464','Kauppatori 6','75505','NURMES');
+INSERT INTO SmartPost VALUES(537,'Pakettiautomaatti, S-market Nurmes','ma-pe 7.00 - 21.00, la 7.00 - 19.00, su 11.00 - 19.00','29.1046369','63.5565189','Porokylänkatu 21','75535','NURMES');
+INSERT INTO SmartPost VALUES(538,'Smartpost, Lidl Pieksämäki','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 19.00','27.1610349','62.3015434','Keskuskatu 3','76104','PIEKSÄMÄKI');
+INSERT INTO SmartPost VALUES(539,'Pakettiautomaatti, K-citymarket Pieksämäki','ma-pe 8.00 - 21.00, la 8.00 - 20.00, su 11.00 - 18.00','27.1642179','62.3030368','Kukkaroniementie 3','76105','PIEKSÄMÄKI');
+INSERT INTO SmartPost VALUES(540,'Smartpost, Lidl Varkaus','ma-pe 08.00 - 21.00, la 08.00 - 20.00, su 11.00 - 19.00','27.86145','62.3184813','Kauppakatu 73','78204','VARKAUS');
+INSERT INTO SmartPost VALUES(541,'Pakettiautomaatti, K-citymarket Varkaus','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 12.00 - 19.00','27.8696837','62.3146956','Relanderinkatu 30','78205','VARKAUS');
+INSERT INTO SmartPost VALUES(542,'Pakettiautomaatti, Prisma Varkaus','ma-la 8.00 - 23.00, su 10.00 - 21.00','27.8553179','62.3171823','Käsityökatu 21-27','78205','VARKAUS');
+INSERT INTO SmartPost VALUES(543,'Smartpost, K-supermarket Leppävirta','ma-la 7.00 - 21.00, su 9.00 - 21.00','27.7851558','62.4912231','Leppävirrantie 26','79104','LEPPÄVIRTA');
+INSERT INTO SmartPost VALUES(544,'Pakettiautomaatti, Prisma Joensuu','ma-la 9.00 - 21.00, su 10.00 - 21.00','29.7782238','62.6163723','Voimatie 2','80105','JOENSUU');
+INSERT INTO SmartPost VALUES(545,'Pakettiautomaatti, CM Joensuu keskusta','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 18.00','29.7591735','62.5985987','Kauppakatu 16','80105','JOENSUU');
+INSERT INTO SmartPost VALUES(546,'Pakettiautomaatti, S-market Rantakatu','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','29.7654123','62.6009449','Rantakatu 19','80105','JOENSUU');
+INSERT INTO SmartPost VALUES(547,'Pakettiautomaatti, K-citymarket Pilkko','ma-pe 9.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','29.7022886','62.630318','Linjatie 2','80145','JOENSUU');
+INSERT INTO SmartPost VALUES(548,'Pakettiautomaatti, S-market Rantakylä','ma-pe 7.00 - 22.00, la 7.00 - 21.00, su 11.00 - 21.00','29.8199787','62.6154816','Pataluodonkatu 1','80165','JOENSUU');
+INSERT INTO SmartPost VALUES(549,'Pakettiautomaatti, S-market Utra','ma-la 7.00 - 21.00, su 12.00 - 21.00','29.8578311','62.6191791','Lasinpuhaltajantie 1','80175','JOENSUU');
+INSERT INTO SmartPost VALUES(550,'Pakettiautomaatti, S-market Vehkalahti','ma-la 7.00 - 21.00, su 12.00 - 21.00','29.7701452','62.5811131','Mintunkatu 2','80225','JOENSUU');
+INSERT INTO SmartPost VALUES(551,'SmartPost, S-market Karsikko','ma - pe 7.00 - 22.00, la 7.00 - 21.00, su 11.00 - 21.00','29.8360868','62.5992138','Junnunkuja 1','80264','JOENSUU');
+INSERT INTO SmartPost VALUES(552,'Pakettiautomaatti, S-market Ylämylly','ma-la 7.00 - 21.00, su 12.00 - 21.00','29.548627','62.6129498','Kievarintie 1','80405','YLÄMYLLY');
+INSERT INTO SmartPost VALUES(553,'Pakettiautomaatti, K-citymarket Lieksa','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 18.00','30.0231498','63.3191141','Pielisentie 34','81705','LIEKSA');
+INSERT INTO SmartPost VALUES(554,'Pakettiautomaatti, S-market Outokumpu','ma-pe 7.00 - 21.00, la 7.00 - 18.00, su 12.00 - 18.00','29.0129289','62.7270493','Kummunkatu 11','83505','OUTOKUMPU');
+INSERT INTO SmartPost VALUES(555,'Smartpost, S-market Jussintori ','ma-su 6.00 - 24.00','29.2648465','63.2471735','Karjalantie 1','83904','JUUKA');
+INSERT INTO SmartPost VALUES(556,'Pakettiautomaatti, K-citymarket Ylivieska','ma-la 8.00 - 21.00,  su 11.00 - 20.00','24.551532','64.0635835','Savarinkatu 2','84105','YLIVIESKA');
+INSERT INTO SmartPost VALUES(557,'Pakettiautomaatti, Prisma Ylivieska','ma-la 8.00 - 21.00, su 10.00 - 21.00','24.5531764','64.0629512','Savarinkatu 9','84105','YLIVIESKA');
+INSERT INTO SmartPost VALUES(558,'Pakettiautomaatti, ABC Kalajoki Hiekkasärkät','ma-su 6.00 - 24.00','23.8095554','64.2305064','Tuomipakkaintie 2','85105','KALAJOKI');
+INSERT INTO SmartPost VALUES(559,'Pakettiautomaatti, S-market Kalajoki','ma-la 7.00 - 21.00, su 12.00 - 18.00','23.9556555','64.251973','Kalajoentie 38','85105','KALAJOKI');
+INSERT INTO SmartPost VALUES(560,'Pakettiautomaatti, S-market Nivala','ma-la 7.00 - 21.00, su 10.00 - 21.00','24.9597221','63.9304165','Kalliontie 19','85505','NIVALA');
+INSERT INTO SmartPost VALUES(561,'Pakettiautomaatti, Prisma Kajaani','ma-la 8.00 - 21.00, su 10.00 - 18.00','27.7464062','64.2213169','Veturitie 1','87105','KAJAANI');
+INSERT INTO SmartPost VALUES(562,'Pakettiautomaatti, Tokmanni Kajaani','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','27.7429656','64.2179242','Kasarminkatu 18','87105','KAJAANI');
+INSERT INTO SmartPost VALUES(563,'Pakettiautomaatti, K-citymarket Kajaani','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','27.7366102','64.2232958','Kauppakatu 10','87105','KAJAANI');
+INSERT INTO SmartPost VALUES(564,'Pakettiautomaatti, ABC Kajaani','ma-su 6.00 - 24.00','27.6781075','64.2188641','Taikatie 4','87705','KAJAANI');
+INSERT INTO SmartPost VALUES(565,'Smartpost, K-supermarket Vuokatti','ma-la 8.00 - 21.00, su 10.00 - 21.00','28.2678151','64.140143','Heikintie 1','88614','VUOKATTI');
+INSERT INTO SmartPost VALUES(566,'Pakettiautomaatti, S-market Kuhmo','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','29.5110876','64.1236412','Kainuuntie 123','88905','KUHMO');
+INSERT INTO SmartPost VALUES(567,'Pakettiautomaatti, K-Supermarket Suomussalmi','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','28.9103205','64.8864521','Risteentie 12','89605','SUOMUSSALMI');
+INSERT INTO SmartPost VALUES(568,'Pakettiautomaatti, Sokos Oulu','ma-la 9.00 - 21.00, su 11.00 - 18.00','25.4725091','65.011363','Isokatu 25','90105','OULU');
+INSERT INTO SmartPost VALUES(569,'Pakettiautomaatti, K-Supermarket Hovihalli','ma-pe 7.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','25.471285','65.0104373','Isokatu 33','90105','OULU');
+INSERT INTO SmartPost VALUES(570,'Pakettiautomaatti, Prisma Raksila','ma-la 8.00 - 21.00, su 11.00 - 19.00','25.489881','65.0099366','Tehtaankatu 3','90135','OULU');
+INSERT INTO SmartPost VALUES(571,'Pakettiautomaatti, K-Supermarket Joutsensilta','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','25.4818967','64.9969786','Paljetie 4','90155','OULU');
+INSERT INTO SmartPost VALUES(572,'Pakettiautomaatti, S-market Kastelli','ma-la 7.00 - 23.00, su 9.00 - 23.00','25.5277757','65.0073403','Aapistie 2','90235','OULU');
+INSERT INTO SmartPost VALUES(573,'Pakettiautomaatti, K-market Ruokavinkki','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.5880969','64.9773745','Kangaskontiontie 15','90245','OULU');
+INSERT INTO SmartPost VALUES(574,'Pakettiautomaatti, Prisma Limingantulli','ma-la 8.00 - 23.00, su 11.00 - 21.00','25.4619326','64.9961547','Nuottasaarentie 1','90405','OULU');
+INSERT INTO SmartPost VALUES(575,'Pakettiautomaatti, Verkkokauppa.com Oulu','ma-pe 9.00 - 21.00, la 9.00 - 18.00, su 12.00 - 18.00','25.5225326','64.9609431','Kaakkurinkulma 4','90415','OULU');
+INSERT INTO SmartPost VALUES(576,'Pakettiautomaatti, K-citymarket Kaakkuri','ma-la 8.00 - 21.00,  su 11.00 - 21.00','25.5239417','64.956222','Metsokankaantie 5','90425','OULU');
+INSERT INTO SmartPost VALUES(577,'Pakettiautomaatti, S-market Kaakkuri','ma-la 7.00 - 22.00, su 10.00 - 21.00','25.5434311','64.9637045','Palokankaantie 301','90425','OULU');
+INSERT INTO SmartPost VALUES(578,'Pakettiautomaatti, Prisma Zeppelin','ma-la 7.00 - 21.00, su 11.00 - 19.00','25.5034842','64.9129283','Zeppelinintie','90455','KEMPELE');
+INSERT INTO SmartPost VALUES(579,'Pakettiautomaatti, Sale Toppila','ma-la 7.00 - 22.00, su 9.00 - 22.00','25.4335213','65.0455639','Paakakatu 2','90525','OULU');
+INSERT INTO SmartPost VALUES(580,'Pakettiautomaatti, Ideapark Oulu','ma-pe 10.00 - 20.00, la 10.00 - 18.00, su 12.00 - 18.00','25.4473152','65.0761721','Ritaharjuntie 49','90545','OULU');
+INSERT INTO SmartPost VALUES(581,'Pakettiautomaatti, K-supermarket Ritaharju','ma-pe 7.00 - 21.00, la 8.00 - 21.00,  su 11.00 - 21.00','25.4526381','65.0804472','Rita-aukiontie 2','90545','OULU');
+INSERT INTO SmartPost VALUES(582,'Pakettiautomaatti, Prisma Linnanmaa','ma-la 7.00 - 21.00, su 11.00 - 19.00','25.4554986','65.0541077','Kauppalinnankuja 1-3','90575','OULU');
+INSERT INTO SmartPost VALUES(583,'Pakettiautomaatti, Oulun yliopisto','ma-pe 7.00 - 19.00, la 8.00 - 15.00','25.4712299','65.0583568','Erkki Koiso-Kanttilan katu 1','90575','OULU');
+INSERT INTO SmartPost VALUES(584,'Pakettiautomaatti, Sale Kaijonharju','ma-pe 7.00 - 23.00, la 8.00 - 23.00, su 9.00 - 23.00','25.4806523','65.0601166','Kalevalantie 3','90575','OULU');
+INSERT INTO SmartPost VALUES(585,'Pakettiautomaatti, K-citymarket Rusko','ma-la 8.00 - 21.00,  su 11.00 - 21.00','25.5489068','65.0389317','Laakeritie 4','90625','OULU');
+INSERT INTO SmartPost VALUES(586,'Pakettiautomaatti, Sale Talvikangas','ma-pe 7.00 - 23.00, la 8.00 - 23.00, su 9.00 - 23.00','25.5868417','65.0451072','Tuiskutie 3','90635','OULU');
+INSERT INTO SmartPost VALUES(587,'Smartpost, Lidl Pateniemi ','ma-la 8.00 - 21.00, su 11.00 - 20.00','25.4056898','65.080119','Väliahontie 49','90804','OULU');
+INSERT INTO SmartPost VALUES(588,'Pakettiautomaatti, Sale Herukka Oulu','ma-pe 7.00 - 22.00, la 7.00 - 22.00, su 9.00 - 22.00','25.4030432','65.0969844','Taskisentie 1','90805','OULU');
+INSERT INTO SmartPost VALUES(589,'Pakettiautomaatti, S-market Haukipudas','ma-la 7.00 - 21.00, su 10.00 - 21.00','25.3482284','65.1766593','Kauppakuja 2','90835','HAUKIPUDAS');
+INSERT INTO SmartPost VALUES(590,'Pakettiautomaatti, S-market Muhos','ma-la 7.00 - 21.00, su 12.00 - 18.00','25.994144','64.8078903','Valtatie 13','91505','MUHOS');
+INSERT INTO SmartPost VALUES(591,'Pakettiautomaatti, ABC Tupos','24h','25.5243991','64.8623379','Tuposkorva 1','91915','TUPOS');
+INSERT INTO SmartPost VALUES(592,'Pakettiautomaatti, K-citymarket Raahe','ma-la 7.00 - 21.00, su 11.00 - 19.00','24.4846224','64.6779918','Ollinkalliontie 2','92105','RAAHE');
+INSERT INTO SmartPost VALUES(593,'Pakettiautomaatti, Prisma Raahe','ma-la 7.00 - 21.00, su 11.00 - 19.00','24.4832052','64.6872651','Palokunnankatu 37','92105','RAAHE');
+INSERT INTO SmartPost VALUES(594,'Smartpost, Tokmanni Raahe','ma-la 8.00 - 21.00, su 10.00 - 18.00','24.4968025','64.6849548','Rakentajankatu 6','92134','RAAHE');
+INSERT INTO SmartPost VALUES(595,'Pakettiautomaatti, K-citymarket Kuusamo','ma-pe 8.00 - 21.00, la 9.00 - 20.00, su 11.00 - 20.00','29.1625019','65.9564045','Luomantie 1-3','93605','KUUSAMO');
+INSERT INTO SmartPost VALUES(596,'Pakettiautomaatti, Sale Kuusamo','ma-la 7.00 - 22.00, su 10.00 - 22.00','29.1866487','65.9640992','Ouluntaival 1','93605','KUUSAMO');
+INSERT INTO SmartPost VALUES(597,'Pakettiautomaatti, Prisma Kuusamo','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 10.00 - 18.00','29.1607453','65.9579245','Huoparintie 1','93605','KUUSAMO');
+INSERT INTO SmartPost VALUES(598,'Pakettiautomaatti, K-citymarket Kemi','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 19.00','24.5650688','65.7399006','Asemakatu 1','94105','KEMI');
+INSERT INTO SmartPost VALUES(599,'Pakettiautomaatti, K-citymarket Keminmaa','ma-pe 8.00 - 21.00, la 8.00 - 19.00, su 11.00 - 19.00','24.5252628','65.7955611','Jauholantie 1-3','94455','KEMINMAA');
+INSERT INTO SmartPost VALUES(600,'Pakettiautomaatti, Prisma Kemi','ma-la 8.00 - 21.00, su 11.00 - 19.00','24.5786683','65.7385523','Karjalahdenkatu','94605','KEMI');
+INSERT INTO SmartPost VALUES(601,'Pakettiautomaatti, Rajalla På Gränsen','ma-pe 10.00 - 20.00, la 10.00 - 18.00, su 12.00 - 18.00','24.142785','65.8440905','Länsiranta 10','95405','TORNIO');
+INSERT INTO SmartPost VALUES(602,'Pakettiautomaatti, Sale Tornio','ma-la 7.00 - 24.00, su 9.00 - 24.00','24.1464948','65.8478618','Torikatu 21','95405','TORNIO');
+INSERT INTO SmartPost VALUES(603,'Pakettiautomaatti, Prisma Tornio','ma-la 8.00 - 21.00, su 11.00 - 21.00','24.1956958','65.8440433','Oikokatu 1','95425','TORNIO');
+INSERT INTO SmartPost VALUES(604,'Jounin Kauppa','ma-la 8.00 - 21.00, su 10.00 - 21.00','24.1549203','67.6052587','Sannanrannantie 3','95974','KÄSLOMPOLO');
+INSERT INTO SmartPost VALUES(605,'Pakettiautomaatti, K-supermarket Kauppatori','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','25.7160587','66.5006777','Lapinkävijäntie 7','96105','ROVANIEMI');
+INSERT INTO SmartPost VALUES(606,'Pakettiautomaatti, S-market Revontuli','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 12.00 - 18.00','25.7240737','66.5037339','Koskikatu 27','96105','ROVANIEMI');
+INSERT INTO SmartPost VALUES(607,'Pakettiautomaatti, Kauppakeskus Rinteenkulma','ma-pe 8.00 - 21.00, la 10.00 - 18.00, su 12.00 - 18.00','25.7261369','66.5032212','Koskikatu 25','96205','ROVANIEMI');
+INSERT INTO SmartPost VALUES(608,'Smartpost, Tokmanni Rovaniemi','ma-pe 8.00 - 20.00, la 8.00 - 18.00, su 11.00 - 18.00','25.673366','66.4908478','Teollisuustie 13','96324','ROVANIEMI');
+INSERT INTO SmartPost VALUES(609,'Pakettiautomaatti, Prisma Rovaniemi','ma-la 8.00 - 22.00, su 11.00 - 22.00','25.6907517','66.491597','Teollisuustie 2','96325','ROVANIEMI');
+INSERT INTO SmartPost VALUES(610,'Pakettiautomaatti, K-citymarket Rovaniemi','ma-la 8.00 - 21.00,  su 11.00 - 19.00','25.7578799','66.5177804','Pulkamontie 1','96905','SAARENKYLÄ');
+INSERT INTO SmartPost VALUES(611,'Smartpost, Lidl Kemijärvi ','ma-pe 08.00-21.00, la 08.00-20.00, su 11.00-19.00','27.4286687','66.7158067','Kirkkokatu 2-4','98104','KEMIJÄRVI');
+INSERT INTO SmartPost VALUES(612,'Pakettiautomaatti, S-market Erätuli','ma-pe 8.00 - 21.00, la 8.00 - 18.00, su 10.00 - 18.00','28.671163','66.8305546','Kuusamontie 17','98905','SALLA');
+INSERT INTO SmartPost VALUES(613,'SmartPost, Nord1-Market','ma-pe 10.00 - 19.00, la-su 10.00 - 18.00','29.1036365','69.6649646','Sevettijärventie 12206','99944','NÄÄTÄMÖ');
+CREATE TABLE esine (
+esineid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+nimi VARCHAR(64) NOT NULL,
+paino DOUBLE NOT NULL,
+koko VARCHAR(12),
+voikoHajota BOOLEAN NOT NULL,
+
+UNIQUE(nimi, paino, koko)
+);
+INSERT INTO esine VALUES(1,'puuhöylä',1.0,'0.0075',0);
+INSERT INTO esine VALUES(2,'kirja',0.2000000000000000111,'0.006',0);
+INSERT INTO esine VALUES(3,'kahvikuppi',0.2000000000000000111,'0.00768',1);
+INSERT INTO esine VALUES(4,'Ming-vaasi',10.0,'0.2',1);
+CREATE TABLE paketti (
+pktid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+luokkanro INTEGER,
+FOREIGN KEY(luokkanro) REFERENCES luokka(luokkanro)
+);
+CREATE TABLE luokka (
+luokkanro INTEGER UNIQUE NOT NULL PRIMARY KEY,
+kokoraja DOUBLE NOT NULL,
+painoraja DOUBLE NOT NULL,
+
+CHECK (luokkanro IN ('1', '2', '3'))
+);
+INSERT INTO luokka VALUES(1,0.026999999999999999694,5.0);
+INSERT INTO luokka VALUES(2,0.0080000000000000001665,5.0);
+INSERT INTO luokka VALUES(3,1.0,35.0);
+CREATE TABLE lahetystiedot (
+pktid INTEGER PRIMARY KEY,
+lahtospid INTEGER,
+kohdespid INTEGER,
+lahettajaid INTEGER,
+vastaanottajaid INTEGER,
+lahtoaika DATE,
+saapumisaika DATE,
+matkanpituus DOUBLE,
+lahetetty BOOLEAN DEFAULT 0, 
+FOREIGN KEY(pktid) REFERENCES paketti(pktid) ON DELETE CASCADE,
+FOREIGN KEY(lahettajaid) REFERENCES hlotiedot(hloid),
+FOREIGN KEY(vastaanottajaid) REFERENCES hlotiedot(hloid));
+CREATE TABLE hlotiedot (
+hloid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+etunimi VARCHAR(32) NOT NULL,
+sukunimi VARCHAR(32) NOT NULL,
+puhnro VARCHAR(13) NOT NULL,
+UNIQUE (etunimi, sukunimi, puhnro));
+CREATE TABLE sijaitsee (
+pktid,
+SPid,
+FOREIGN KEY(pktid) REFERENCES paketti(pktid) ON DELETE CASCADE,
+FOREIGN KEY(SPid) REFERENCES SmartPost(SPid)
+);
+CREATE TABLE sisaltaa (
+pktid,
+esineid,
+FOREIGN KEY(pktid) REFERENCES paketti(pktid) ON DELETE CASCADE,
+FOREIGN KEY(esineid) REFERENCES esine(esineid)
+);
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('esine',4);
+INSERT INTO sqlite_sequence VALUES('SmartPost',613);
+CREATE VIEW "lahto-ja_saapumispaikka"("Paketti", "Lahto SmarPost", "Kohde SmarPost", lahtoaika, saapumisaika, matkan_pituus)
+AS
+SELECT lahetystiedot.pktid AS "Paketti",
+	(lahto_sp.nimi || " " || lahto_sp.osoite || " " || lahto_sp.postinro || " " || lahto_sp.kaupunki) AS "Lahto SmarPost",
+	(kohde_sp.nimi || " " || kohde_sp.osoite || " " || kohde_sp.postinro || " " || kohde_sp.kaupunki) AS "Kohde SmarPost",
+	lahetystiedot.lahtoaika AS "lahtoaika", lahetystiedot.saapumisaika AS "saapumisaika", lahetystiedot.matkanpituus AS "matkan_pituus"
+FROM lahetystiedot
+INNER JOIN SmartPost AS lahto_sp
+ON (lahto_sp.spid = lahetystiedot.lahtospid)
+INNER JOIN SmartPost AS kohde_sp
+ON (kohde_sp.spid = lahetystiedot.kohdespid);
+CREATE VIEW lahettajat_ja_vastaanottajat ("Paketti", "Lahettajan nimi ja puhelinnumero", "Vastaanottajan nimi ja puhelinnumero")
+AS
+SELECT lahetystiedot.pktid AS "Paketti",
+	(lahettaja.etunimi || " " || lahettaja.sukunimi || ", " || lahettaja.puhnro) AS "Lahettajan nimi ja puhelinnumero",
+	(vastaanottaja.etunimi || " " || vastaanottaja.sukunimi || ", " || vastaanottaja.puhnro) AS "Vastaanottajan nimi ja puhelinnumero"
+FROM lahetystiedot
+INNER JOIN hlotiedot AS lahettaja
+ON (lahettaja.hloid = lahetystiedot.lahettajaid)
+INNER JOIN hlotiedot AS vastaanottaja
+ON (vastaanottaja.hloid = lahetystiedot.vastaanottajaid);
+CREATE VIEW "taydelliset_lahetystiedot"(Paketti, "Lahettajan nimi ja puhelinnumero", "Vastaanottajan nimi ja puhelinnumero", "Lahto SmarPost", "Kohde SmarPost", "lahtoaika", "saapumisaika", "matkan_pituus")
+AS
+SELECT lahettajat_ja_vastaanottajat.Paketti, lahettajat_ja_vastaanottajat."Lahettajan nimi ja puhelinnumero", lahettajat_ja_vastaanottajat."Vastaanottajan nimi ja puhelinnumero",
+	"lahto-ja_saapumispaikka"."Lahto SmarPost" , "lahto-ja_saapumispaikka"."Kohde SmarPost", "lahto-ja_saapumispaikka"."lahtoaika","lahto-ja_saapumispaikka"."saapumisaika", "lahto-ja_saapumispaikka"."matkan_pituus"
+ FROM lahettajat_ja_vastaanottajat INNER JOIN "lahto-ja_saapumispaikka" ON lahettajat_ja_vastaanottajat.Paketti = "lahto-ja_saapumispaikka".Paketti;
+CREATE VIEW "lahto-ja_saapumisgeografinensijainti"(pktid, lahtolat, lahtolon, kohdelat, kohdelon)
+AS
+SELECT lahetystiedot.pktid AS "pktid",
+	(lahto_sp.latitude) AS "lahtolat",
+	(lahto_sp.longitude) AS "lahtolon",
+	(kohde_sp.latitude) AS "kohdelat",
+	(kohde_sp.longitude) AS "kohdelon"
+FROM lahetystiedot
+INNER JOIN SmartPost AS lahto_sp
+ON (lahto_sp.spid = lahetystiedot.lahtospid)
+INNER JOIN SmartPost AS kohde_sp
+ON (kohde_sp.spid = lahetystiedot.kohdespid);
+COMMIT;

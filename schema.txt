@@ -1,0 +1,109 @@
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE TABLE SmartPost (
+SPid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+
+nimi VARCHAR(32),
+aukioloajat VARCHAR(40) NOT NULL,
+
+longitude VARCHAR(20) NOT NULL,
+latitude VARCHAR(20) NOT NULL,
+
+
+osoite VARCHAR(30),
+postinro VARCHAR(30), 
+kaupunki VARCHAR(30)
+);
+CREATE TABLE esine (
+esineid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+nimi VARCHAR(64) NOT NULL,
+paino DOUBLE NOT NULL,
+koko VARCHAR(12),
+voikoHajota BOOLEAN NOT NULL,
+
+UNIQUE(nimi, paino, koko)
+);
+CREATE TABLE paketti (
+pktid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+luokkanro INTEGER,
+FOREIGN KEY(luokkanro) REFERENCES luokka(luokkanro)
+);
+CREATE TABLE luokka (
+luokkanro INTEGER UNIQUE NOT NULL PRIMARY KEY,
+kokoraja DOUBLE NOT NULL,
+painoraja DOUBLE NOT NULL,
+
+CHECK (luokkanro IN ('1', '2', '3'))
+);
+CREATE TABLE lahetystiedot (
+pktid INTEGER PRIMARY KEY,
+lahtospid INTEGER,
+kohdespid INTEGER,
+lahettajaid INTEGER,
+vastaanottajaid INTEGER,
+lahtoaika DATE,
+saapumisaika DATE,
+matkanpituus DOUBLE,
+lahetetty BOOLEAN DEFAULT 0, 
+FOREIGN KEY(pktid) REFERENCES paketti(pktid) ON DELETE CASCADE,
+FOREIGN KEY(lahettajaid) REFERENCES hlotiedot(hloid),
+FOREIGN KEY(vastaanottajaid) REFERENCES hlotiedot(hloid));
+CREATE TABLE hlotiedot (
+hloid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+etunimi VARCHAR(32) NOT NULL,
+sukunimi VARCHAR(32) NOT NULL,
+puhnro VARCHAR(13) NOT NULL,
+UNIQUE (etunimi, sukunimi, puhnro));
+CREATE TABLE sijaitsee (
+pktid,
+SPid,
+FOREIGN KEY(pktid) REFERENCES paketti(pktid) ON DELETE CASCADE,
+FOREIGN KEY(SPid) REFERENCES SmartPost(SPid)
+);
+CREATE TABLE sisaltaa (
+pktid,
+esineid,
+FOREIGN KEY(pktid) REFERENCES paketti(pktid) ON DELETE CASCADE,
+FOREIGN KEY(esineid) REFERENCES esine(esineid)
+);
+CREATE VIEW "lahto-ja_saapumispaikka"("Paketti", "Lahto SmarPost", "Kohde SmarPost", lahtoaika, saapumisaika, matkan_pituus)
+AS
+SELECT lahetystiedot.pktid AS "Paketti",
+	(lahto_sp.nimi || " " || lahto_sp.osoite || " " || lahto_sp.postinro || " " || lahto_sp.kaupunki) AS "Lahto SmarPost",
+	(kohde_sp.nimi || " " || kohde_sp.osoite || " " || kohde_sp.postinro || " " || kohde_sp.kaupunki) AS "Kohde SmarPost",
+	lahetystiedot.lahtoaika AS "lahtoaika", lahetystiedot.saapumisaika AS "saapumisaika", lahetystiedot.matkanpituus AS "matkan_pituus"
+FROM lahetystiedot
+INNER JOIN SmartPost AS lahto_sp
+ON (lahto_sp.spid = lahetystiedot.lahtospid)
+INNER JOIN SmartPost AS kohde_sp
+ON (kohde_sp.spid = lahetystiedot.kohdespid)
+/* "lahto-ja_saapumispaikka"(Paketti,"Lahto SmarPost","Kohde SmarPost",lahtoaika,saapumisaika,matkan_pituus) */;
+CREATE VIEW lahettajat_ja_vastaanottajat ("Paketti", "Lahettajan nimi ja puhelinnumero", "Vastaanottajan nimi ja puhelinnumero")
+AS
+SELECT lahetystiedot.pktid AS "Paketti",
+	(lahettaja.etunimi || " " || lahettaja.sukunimi || ", " || lahettaja.puhnro) AS "Lahettajan nimi ja puhelinnumero",
+	(vastaanottaja.etunimi || " " || vastaanottaja.sukunimi || ", " || vastaanottaja.puhnro) AS "Vastaanottajan nimi ja puhelinnumero"
+FROM lahetystiedot
+INNER JOIN hlotiedot AS lahettaja
+ON (lahettaja.hloid = lahetystiedot.lahettajaid)
+INNER JOIN hlotiedot AS vastaanottaja
+ON (vastaanottaja.hloid = lahetystiedot.vastaanottajaid)
+/* lahettajat_ja_vastaanottajat(Paketti,"Lahettajan nimi ja puhelinnumero","Vastaanottajan nimi ja puhelinnumero") */;
+CREATE VIEW "taydelliset_lahetystiedot"(Paketti, "Lahettajan nimi ja puhelinnumero", "Vastaanottajan nimi ja puhelinnumero", "Lahto SmarPost", "Kohde SmarPost", "lahtoaika", "saapumisaika", "matkan_pituus")
+AS
+SELECT lahettajat_ja_vastaanottajat.Paketti, lahettajat_ja_vastaanottajat."Lahettajan nimi ja puhelinnumero", lahettajat_ja_vastaanottajat."Vastaanottajan nimi ja puhelinnumero",
+	"lahto-ja_saapumispaikka"."Lahto SmarPost" , "lahto-ja_saapumispaikka"."Kohde SmarPost", "lahto-ja_saapumispaikka"."lahtoaika","lahto-ja_saapumispaikka"."saapumisaika", "lahto-ja_saapumispaikka"."matkan_pituus"
+ FROM lahettajat_ja_vastaanottajat INNER JOIN "lahto-ja_saapumispaikka" ON lahettajat_ja_vastaanottajat.Paketti = "lahto-ja_saapumispaikka".Paketti
+/* taydelliset_lahetystiedot(Paketti,"Lahettajan nimi ja puhelinnumero","Vastaanottajan nimi ja puhelinnumero","Lahto SmarPost","Kohde SmarPost",lahtoaika,saapumisaika,matkan_pituus) */;
+CREATE VIEW "lahto-ja_saapumisgeografinensijainti"(pktid, lahtolat, lahtolon, kohdelat, kohdelon)
+AS
+SELECT lahetystiedot.pktid AS "pktid",
+	(lahto_sp.latitude) AS "lahtolat",
+	(lahto_sp.longitude) AS "lahtolon",
+	(kohde_sp.latitude) AS "kohdelat",
+	(kohde_sp.longitude) AS "kohdelon"
+FROM lahetystiedot
+INNER JOIN SmartPost AS lahto_sp
+ON (lahto_sp.spid = lahetystiedot.lahtospid)
+INNER JOIN SmartPost AS kohde_sp
+ON (kohde_sp.spid = lahetystiedot.kohdespid)
+/* "lahto-ja_saapumisgeografinensijainti"(pktid,lahtolat,lahtolon,kohdelat,kohdelon) */;
